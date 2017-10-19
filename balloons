@@ -1,7 +1,0 @@
-#!/bin/sh
-BALLOONS=./src/balloons
-if test -e $BALLOONS; then
-	$BALLOONS
-else
-	echo "Please run './configure' and 'make' to build Balloons."
-fi

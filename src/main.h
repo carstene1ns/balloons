@@ -36,7 +36,7 @@
 
 
 // Tiles
-static char *tile_sets[] = {
+static const char *tile_sets[] = {
 	DATA_PREFIX "/gfx/tiles00.png",
 	DATA_PREFIX "/gfx/shades.png"
 };
@@ -44,7 +44,7 @@ enum { TILES00, SHADES  };
 
 
 // Images
-static char *image_files[] = {
+static const char *image_files[] = {
 	DATA_PREFIX "/gfx/icon.png",
 	DATA_PREFIX "/gfx/frame.png",
 	DATA_PREFIX "/gfx/ball.png"
@@ -53,7 +53,7 @@ enum { ICON, FRAME, BALL_PNG };
 
 
 // Fonts
-static char *font_files[] = {
+static const char *font_files[] = {
     DATA_PREFIX "/fonts/font.ttf",
     DATA_PREFIX "/fonts/font.ttf"
 };
@@ -61,7 +61,7 @@ enum { FONT20, FONT32 };
 
 
 // Level
-static char *level_sets[] = {
+static const char *level_sets[] = {
     DATA_PREFIX "/levels/%d.DAT",
     DATA_PREFIX "/levels/%d.dat"
 };
@@ -73,7 +73,7 @@ enum { LEVELS00, LEVELS01 };
 
 #define NUM_SOUNDS 21
 
-static char *sound_files[NUM_SOUNDS] = {
+static const char *sound_files[NUM_SOUNDS] = {
     DATA_PREFIX "/sounds/s_bang.wav",
     DATA_PREFIX "/sounds/s_beep.wav",
     DATA_PREFIX "/sounds/s_bomb.wav",
@@ -98,7 +98,7 @@ static char *sound_files[NUM_SOUNDS] = {
 };
 #endif
 
-static char *lang_files[] = {
+static const char *lang_files[] = {
     DATA_PREFIX "/S1.TXT",
     DATA_PREFIX "/S2.TXT",
     DATA_PREFIX "/S3.TXT",

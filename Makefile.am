@@ -1,5 +1,10 @@
 EXTRA_DIST = balloons balloons.dev Makefile.win
 
+# development builds use local data files
+if NO_DEVBUILD
+AM_CPPFLAGS = -DDATA_PREFIX=\"$(pkgdatadir)\"
+endif
+
 # src
 bin_PROGRAMS = balloons
 balloons_SOURCES = \

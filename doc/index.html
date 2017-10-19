@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META NAME="Author" CONTENT="Roland Lagarden">
+<TITLE>Balloons - prick 'n' puzzle (documentation)</TITLE>
+<META NAME="DESCRIPTION" CONTENT="Balloons - prick 'n' puzzle">
+<META NAME="KEYWORDS" CONTENT="Balloons, game, linux">
+<STYLE type=text/css>
+A:link { COLOR: #0000ff; TEXT-DECORATION: none }
+A:visited { COLOR: #0000ff; TEXT-DECORATION: none }
+A:active { COLOR: #0096ff; TEXT-DECORATION: none }
+A:hover { COLOR: #0096ff; TEXT-DECORATION: underline }
+</STYLE>
+</HEAD>
+<BODY><FONT FACE="Arial">
+
+<TABLE WIDTH=675><!-- kopf -->
+ <TR>
+  <TD ALIGN=RIGHT><FONT SIZE="+2" FACE="Arial Black">S-v-N</FONT> Software vom Niederrhein</TD>
+ </TR>
+</TABLE>
+<TABLE WIDTH=675>
+<TR><TD><HR noshade size="3"></TD></TR>
+<TR><TD WIDTH=1 HEIGHT=10></TD></TR>
+</TABLE>
+ </TD>
+  <TD WIDTH=10 HEIGHT=1></TD>
+  <TD>
+   <TABLE BORDER=0 WIDTH=650><!-- cont -->
+    <TR VALIGN=TOP>
+     <TD>
+<div align="center"><h1>BALLOONS</h1><font size="-1"><h3>prick 'n' puzzle</h3>alpha version 0.1.8-3 - Aug 6, 2007<br>
+&copy;1993-2007 by M. und R. Lagarden<br>published under the GPL</font><p>
+</div>
+<HR noshade size="5" color=#FF0000>
+
+<h2>Content</h2>
+
+I. <a href="#I">the game</a>
+ <ol start="1" type="1">
+  <li>BALLOONS introduces itself</li>
+  <li>getting started</li>
+  <li>the main menu</li>
+  <li>starting to play</li>
+  <li>main keys when playing</li>
+ </ol>
+II. <a href="#II">items and elements</a>
+ <ol start="1" type="1">
+ <li>this may be useful for you ...</li>
+ <li>this might be bad for you ...</li>
+ <li>this could be nasty ...</li>
+ </ol>
+III.<a href="#III">system requirements</a>
+
+<a name="I"><hr noshade size="1"></a>
+<h3>I. the game</h3>
+<h4>1. BALLOONS introduces itself</h4>
+<p>BALLOONS has got 99 level which can consist of one or up to eighteen screens.<br>
+BALLOONS has a little bit of  <i>SOKOBAN</i>, a nice portion <b>OXYD&trade;</b> und a lot of BALLOONS!<br>
+There will be mazes, tricky stuff, time based level, and you can be taken for a ride either!<br>
+BALLOONS intends to make you laugh, to stress you, and to make you pore.<br>
+The landscapes of BALLOONS come with miscellaneous elements. Some walls that might look inconspicuous, may offer unimagined features: they might be moveable, destroyable (listen to the sound...), or you can walk right through them.<br>
+The aim of the game is to collect a certain number of coins and to go searching the exit to the next landscape.<br>
+These landscape don't just contain the usual obstacles like walls, abysses and various enemies, but there is also a bunch of balloons containing most of the coins to be found.
+</p>
+
+<h4>2. getting started</h4>
+<p>BALLOONS is available as binaries and source distribution for windows or linux-like operation systems:<br>
+ After unpacking the sources, you will have to compile it on a shell using <font face="Courier">./configure &#038;&#038; make</font>. 
+ (Installing it won't work properly)<br>
+ The binary will be started by executing ./balloons (POSIX) or balloons.exe (Windows).<br>
+ This will start BALLOONS in windowed mode. 
+ When the Intro finishes, you'll find yourself in the main menu.</p>
+<h4>3. the main menu</h4>
+These keys lead to the following actions:
+
+<ul>
+<li>F2: starts a new game beginning from level one with three lives.</li>
+<li>F3: swaps between one or two player mode. In two player mode, each player acts until he has solved his current level.</li>
+<li>F4: lets you enter a level code, so you can (re)start from the level you finished the last time.</li>
+<li><em>F6: lets you choose between the english, german french or dutch language (will be released in a later version...).</em></li>
+<li>F7: a short version of this instruction will then be displayed. Any key swaps to the next page, <font face="Courier">ESC</font> brings you back to the main menu.</li>
+<li>F8: the top ten high score list will be displayed.</li>
+<li>F9: a selection of level is shown. <font face="Courier">ESC</font> brings you back to the main menu.</li>
+<li>F10: quits BALLOONS.</li>
+</ul>
+
+when typing in level codes or high score entries, the following keys are useful:
+<ul>
+<li>RETURN or ENTER to finish the input.</li>
+<li>ESC to cancel.</li>
+<li>BACKSPACE to delete the last character.</li>
+</ul>
+
+<h4>4. starting to play</h4>
+
+<p>The game menu will be shown after the level number has been displayed.
+The content of the game menu (as shown from left to right):</p>
+
+<ul>
+<li><u>the inventory</u> contains everything you carry with you: your remaining number of lives and collected items like hammers, tiles, keys. Up to eight are visible. The item between the two marks on the left lies in your hand. You can act with it as desribed in the <a href="#II">items and elements</a> section. Using the <font face="Courier">CTRL</font> key lets you swap its position.</li>
+<li><u>Euros</u>: every pricked balloon and of course the coins make you earn money on the score. So maybe at the end of the game, you'll join the high score table. But when playing in two player mode, only the better one wins and will be asked to sign in!</li>
+<li><u>Items</u>: The number of coins left to be collected ist shown right here. If it reaches zero, the exit to the next level will appear.</li>
+<li><u>time</u>: this clock counts down in time limited level. When the time passes before the exit is reached, one life will be lost and the level restarts.</li>
+</ul>
+
+<h4>5. main keys when playing</h4>
+
+The actor can be moved in any direction using the cursor keys. Action like pricking balloons, hammering or placing tiles require the assistance of the <font face="Courier">SPACE</font> bar (Support for joysticks is planed...).
+
+
+<ul>
+<li><u>ESC</u>: cancel the actual game. Brings you back to the main menu.</li>
+<li><u>F2</u>: restart the actual level at the loss of one live. When getting stuck, this may be the right key to be pressed...</li>
+<li><u>Pause</u>:  the game will be paused and the screen will be hidden. Pressing any key will continue the game.</li>
+<li><u>CTRL</u>: swaps items in the inventory.</li>
+</ul>
+<a name="II"><hr noshade size="1"></a>
+<h3>II. items and elements</h3>
+
+<h4>1. this may be useful for you ...</h4>
+
+<img src="BALL.gif" width="32" height="32" border="0" alt="" align=left>
+ balloons have to be pricked, then they will show coins or items hidden in them.<p>
+<img src="ITEM.gif" width="160" height="32" border="0" alt="" align=left>
+ these euro coins have to be collected. When the item counter in the game menu comes to zero, the exit will appear on his position. Go and reach out for it!<p>
+<img src="HAMMER.gif" width="32" height="32" border="0" alt="" align=left>
+ the hammer lets you destroy certain walls.<p>
+<img src="KEY.gif" width="32" height="32" border="0" alt="" align=left>
+ keys can open stones with key holes. Each key can be used for one door only (f.e. the first that comes along).<p>
+<img src="FLIESE.gif" width="32" height="32" border="0" alt="" align=left>
+ tiles can be placed over abysses. They will grow to a stable ground plate so you can walk over it.<p>
+<img src="PALETTE.gif" width="32" height="32" border="0" alt="" align=left>
+ the stillage is not only movable, it can close abysses just like the tiles.<p>
+<img src="CLOCK.gif" width="32" height="32" border="0" alt="" align=left>
+ in time limited level you'll get 15 seconds in reserve, otherwise 15 cents.<p>
+<img src="LIVE.gif" width="32" height="32" border="0" alt="" align=left>
+ A new live extends the fun to play!<p>
+<img src="CODE.gif" width="32" height="32" border="0" alt="" align=left> this will show the code to the currently played level. Write it down, so you can restart this level when rejoining the game.<p>
+<a name="halts"><img src="HALT.gif" width="32" height="32" border="0" alt="" align=left></a>
+ this looks like a bus stop?!?! Once you've reached this point and you loose a life (f.e. bij a lightning),
+ this will be your new starting point.<p>
+<img src="BEAMER.gif" width="32" height="32" border="0" alt="" align=left>
+ this beamer transports you to another place.<p>
+<img src="SWITCH.gif" width="32" height="32" border="0" alt="" align=left>
+ switches may have different functions: some make stones vanish, some just swap stones. They even can run a<p>
+<img src="WERFER.gif" width="32" height="32" border="0" alt="" align=left>
+ thrower. His balls can even destroy walls. To make them reach their goal, there are<p>
+<img src="UMLENKER.gif" width="32" height="32" border="0" alt="" align=left>
+ shields. They can be turned to all directions and they can be movable, too!<p>
+<img src="BOMB.gif" width="32" height="32" border="0" alt="" align=left>
+ The bomb: fire it and watch out! The floor might get fired and turn into an abyss and 
+ surrounding destroyable walls will eventually open new ways.<p>
+<img src="SNOW.gif" width="32" height="32" border="0" alt="" align=left>
+ the snowflake uses magic: It make money out of enemies!<p>
+<img src="LOCHST.gif" width="32" height="32" border="0" alt="" align=left>
+ If you move this open stone on a blinking place, ways can be opened (or closed).</p>
+
+<h4>2. this might be bad for you ...</h4>
+<img src="BLITZ.gif" width="32" height="32" border="0" alt="" align=left>
+ lightnings and their correspionding stone cost you a life when touching them.<p>
+<p> X X X Aliens are almost there where your way leads you to. Both of you will die when colliding.<p>
+<img src="RISS.gif" width="32" height="32" border="0" alt="" align=left>
+ cracks in the floor can grow worse when remaining too long on them. At least they end up in an abyss!<p>
+
+<h4>3. this could be nasty ...</h4>
+<img src="PFEIL.gif" width="32" height="32" border="0" alt="" align=left>
+Arrows only allow movement in one direction.<p>
+<img src="EINBAHN.gif" width="32" height="32" border="0" alt="" align=left>
+Here, you are not allowed to walk through. But be careful, your enemies are!<p>
+
+sliding doors are almost nasty. They can squeeze you, when you miss the right moment to pass them!</p>
+
+<a name="III"><hr noshade size="1"></a>
+<h3>III. system requirements</h3>
+<ul>
+<li>Windows 9x,XP,Vista or POSIX bases operation system, with sound card and graphics with 640x480 pixels in true color.</li>
+<li>SDL >= 1.2.0, SDL_image, SDL_ttf >= 2.0.6 , SDL_mixer >= 1.2.5</li>
+</ul>
+
+<HR noshade size="5" color=#FF0000>
+</TD></TR>
+   </TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE BORDER=0 WIDTH=675><!-- fuss -->
+ <TR><TD WIDTH=1 HEIGHT=10></TD></TR>
+ <TR><TD><HR noshade size="2"></TD></TR>
+</TABLE>
+<TABLE WIDTH=675>
+ <TR>
+  <TD ALIGN=RIGHT><font size="-2">&#169; 2007 by Michael and Roland Lagarden
+   <br>Version 0.1.8-3 - Aug 6, 2007</font>
+  </TD>
+ </TR>
+</TABLE>
+</FONT></BODY></HTML>

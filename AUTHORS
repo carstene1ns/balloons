@@ -1,0 +1,9 @@
+BALLOONS is a tile based platform game written in C++ using SDL.
+Players have to collect items which are almost hidden in balloons.
+Prick these balloons and find your way to exit to the following level.
+Levels can be quite tricky, dangerous and time limited, too!
+
+
+AUTHORS:
+ Michael Lagarden <svnmike@sourceforge.net>
+ Roland Lagarden <eriban62@sourceforge.net>

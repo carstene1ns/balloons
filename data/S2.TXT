@@ -1,0 +1,46 @@
+Spiele-Tipps
+
+Begleite unseren kleinen Freund mit
+seiner Nadel durch 99 sehr verschiedene
+Landschaften in denen er diverse Dinge
+einsammeln muss.
+Sie sind oftmals in Luftballoons versteckt.
+Lass sie zerplatzen um herauszufinden,
+wo die Gegenstände versteckt sind.
+#
+Sind genügend Dinge eingesammelt, wird der
+Ausgang zum nächsten Level frei.
+ 
+Aber ... es lauern auch Gefahren!
+Gut aufpassen oder Abstand davon halten.
+#
+Manche Level haben Zeitlimits. Ist die Zeit
+abgelaufen bevor man den Ausgang erreicht,
+verliert man eines der drei Leben, die man
+anfangs bekommen hat.
+Gute Spieler können sich in der Bestenliste
+verewigen.
+#
+Tastaturbelegung während des Spiels:
+ 
+&   ESCAPE:
+$
+$&hält das momentane Spiel an und kehrt zurück zum Hauptmenu
+ 
+&   PAUSE:
+$
+$&Spielpause: jede andere Taste setzt das Spiel fort
+ 
+&   F2:
+$
+$&kostet ein Leben, um den aktuellen Level neu zu beginnen
+#
+Viel Spass
+ 
+-S-v-N-
+ 
+$Roland und Michael Lagarden
+
+http://sourceforge.net/projects/balloons-ng/
+
+$mailto: eriban62@sourceforge.net

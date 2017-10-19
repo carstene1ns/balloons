@@ -1,0 +1,34 @@
+Le Guide
+
+Alors, aidez notre petit amis
+dans ces 99 level differents.
+Il'y a des choses diverses a collectionner,
+pourtant cach� dans des ballons.
+#
+
+Bons joueurs se retrouvent dans la
+Top-Ten highscore table.
+#
+Pour en commencer:
+
+&   ESCAPE: 
+$
+$&finir le jeu et revenir au main menu
+
+&   PAUSE:
+$
+$&pauses the current game. Any key continues
+
+&   F2:
+$
+$&costs you one life to restart the actual level
+#
+bonne chance
+
+-S-v-N-
+
+$Roland et Michael Lagarden
+
+http://sourceforge.net/projects/balloons-ng/
+
+$mailto: eriban62@sourceforge.net

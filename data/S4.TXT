@@ -1,0 +1,46 @@
+Het speel
+
+Onze kleine friend met zijn speeld zal in
+99 landschappen diverse spullen moeten
+verzamelen. Deze zitten soms in een hoop
+ballonetjes, die hij moet pricken om de
+spullen op te vinden.
+#
+De verbleven aantal staat in het menu beneden
+vermeldt. Nadat alles is opgenomen, verschijnt
+de uitgang naar de volgende level.
+
+Maar ... er zijn ook gevaren!
+Wees moedig of blijf ervan af.
+#
+Er zijn ook levels met tijdlimiets.
+Verstrijkt de tijd voor je de uitgang berijkt,
+verlies je een van de drie levens die je met
+speelbegin meekreeg.
+
+Tenslotte mogen goode speelers hun naam op
+de Top-Ten highscore table zetten.
+#
+De toetsen:
+
+&   ESCAPE: 
+$
+$&beendiging van het loopende speel, het hoofdmenu verschijnt
+
+&   PAUSE:
+$
+$&pauze. Verder met elke bewegings toets
+
+&   F2:
+$
+$&niewstart van de aktueele level onder verlies van een leven
+#
+veel plezier
+
+-S-v-N-
+
+$Roland en Michael Lagarden
+
+http://sourceforge.net/projects/balloons-ng/
+
+$mailto: eriban62@sourceforge.net

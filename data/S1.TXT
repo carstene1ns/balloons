@@ -1,0 +1,48 @@
+Players Guide
+
+So follow our little friend with his needle
+through 99 very different landscapes
+where he has to collect certain items.
+They are almost hidden in a bunch of balloons.
+You`ll have to prick these balloons to
+find out whether there are items in.
+#
+After having collected the necessary amount
+shown in the bottom menu, an exit to the next
+level will show up.
+
+But ... there are dangers, too!
+Face them or try to stay away from them.
+#
+Of course, some levels do have timelimits.
+If you run out of time before you reach the
+exit, you will loose one of the three lives
+you got when you started the game.
+
+Good players are allowed to enter their name
+into our Top-Ten highscore table.
+#
+Main keys when playing:
+
+&   ESCAPE:
+$
+$&stops actual game and you get back to main menu
+
+&   PAUSE:
+$
+$&pauses the current game. Any key continues
+
+&   F2:
+$
+$&costs you one life to restart the actual level
+#
+have fun
+
+-S-v-N-
+
+$Roland and Michael Lagarden
+
+http://sourceforge.net/projects/balloons-ng/
+
+$mailto: eriban62@sourceforge.net
+

@@ -1,0 +1,16 @@
+/***************************************************************************
+ *   BALLOONS - prick'n'puzzle -                                           *
+ *                                                                         *
+ *   Copyright (C) 2007 by -S-v-N-  R.& M. Lagarden                        *
+ *   svnmike@sourceforge.net                                               *
+ *   eriban62@sourceforge.net                                              *
+ *                                                                         *
+
+2007-08-06: Version 0.1.8-3:
+2007-07-30: Version 0.1.8-2:
+
+we're in alpha state, so there's still a lot to do:
+
+* enhance keyboard handling (uppercases, etc.)
+* save/load of preferences like fullscreen mode, etc.
+* language support via get_text()

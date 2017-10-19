@@ -22,7 +22,7 @@
  ***************************************************************************/
 
 #include <cstdio>
-#include <string>
+#include <cstring>
 
 #include "scoreList.h"
 

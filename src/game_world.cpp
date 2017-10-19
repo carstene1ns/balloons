@@ -87,7 +87,6 @@ World::~World()
 
  	delete game;
 	delete m_title;
-	delete font32;
 	
 	DEBUG( "game-world is shutdown!" );
 

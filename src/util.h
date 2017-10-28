@@ -40,39 +40,42 @@ using namespace std;
 #define SHOW_DEBUG      1
 
 #if SHOW_DEBUG == 1
-#define DEBUG( msg ) printf( "Balloons_Msg: " ); printf( msg ); printf( "\n" );
-#define SHOW_VERSION() printf(  "Balloons_Msg: " ); \
-                       printf( "Version: %s", VERSION );\
-                       printf( "\n" );
+#define DEBUG(msg) printf("Balloons_Msg: "); printf(msg); printf("\n");
+#define SHOW_VERSION() printf("Balloons_Msg: "); \
+	printf("Version: %s", VERSION); \
+	printf("\n");
 #else
-    #define DEBUG( msg )
+    #define DEBUG(msg)
     #define SHOW_VERSION()
 #endif
 
 /**
-tools needed by the game like timers, etc.
+   tools needed by the game like timers, etc.
 
-	@author R & M Lagarden <roland@lagarden.de oder m.l.k@freenet.de >
-*/
-
+        @author R & M Lagarden <roland@lagarden.de oder m.l.k@freenet.de >
+ */
 
 class Surface
 {
 public:
- Surface(){};
- Surface(const char *filename);
- Surface(const char *filename, int alpha);
- ~Surface(){};
- void draw(int,int);
- void draw(SDL_Rect,SDL_Rect);
- int get_width();
+	Surface(){
+	};
+	Surface(const char *filename);
+	Surface(const char *filename, int alpha);
+	~Surface(){
+	};
+
+	void draw(int, int);
+	void draw(SDL_Rect, SDL_Rect);
+	int get_width();
 	void setscreen(SDL_Surface *screen)
 	{
 		m_screen = screen;
 	}
- void set_alpha(int);
+	void set_alpha(int);
+
 private:
- SDL_Surface *screen, *m_screen;
+	SDL_Surface *screen, *m_screen;
 };
 
 class Font : public Surface
@@ -80,20 +83,20 @@ class Font : public Surface
 public:
 	Font(const char *filename, int size);
 	~Font();
-	
-	void draw(int x,int y, const char *text);
+
+	void draw(int x, int y, const char *text);
 	int get_width(const char *);
 	void setscreen(SDL_Surface *screen)
 	{
 		m_screen = screen;
 	}
+
 private:
 	SDL_Surface *screen, *m_screen;
 	TTF_Font *ttf_font;
-  SDL_Color fgcolor;
-//   SDL_Color bgcolor;
+	SDL_Color fgcolor;
+	// SDL_Color bgcolor;
 };
-
 
 // DISPLAY -------------------------------------------------
 
@@ -101,12 +104,13 @@ class Display
 {
 public:
 	Display();
-	~Display(){};
+	~Display(){
+	};
 private:
-const SDL_VideoInfo *VideoInfo;
-Uint32 VideoMem;  // Size of (available) video memory
-Uint32 hw_available;  // indicated support of SDL_HWSURFACE
-Uint8 bpp;  // the best pixel format (colour depth)
+	const SDL_VideoInfo *VideoInfo;
+	Uint32 VideoMem; // Size of (available) video memory
+	Uint32 hw_available; // indicated support of SDL_HWSURFACE
+	Uint8 bpp; // the best pixel format (colour depth)
 };
 
 // DISPLAYWINDOW -------------------------------------------------
@@ -115,17 +119,20 @@ class DisplayWindow
 {
 public:
 	DisplayWindow();
-	DisplayWindow(const char*, int, int , bool , bool);
+	DisplayWindow(const char*, int, int, bool, bool);
 	~DisplayWindow();
-	bool is_fullscreen(){return(fullscreen);};
+
+	bool is_fullscreen(){
+		return(fullscreen);
+	};
 	void set_windowed();
-	void set_fullscreen(int,int,int);
+	void set_fullscreen(int, int, int);
 	void clear();
 	void flip()
 	{
 		SDL_Flip( m_screen );
 	}
-	
+
 	SDL_Surface *m_screen;
 
 private:
@@ -134,15 +141,18 @@ private:
 
 
 
-class Timer{
+class Timer
+{
 public:
 	Timer(Uint32 milliseconds){
 		start_time = SDL_GetTicks();
 		intervall = milliseconds;
 	};
 	bool elapsed(){
-		if(SDL_GetTicks() - start_time > intervall) return true;
-		else return false;
+		if (SDL_GetTicks() - start_time > intervall)
+			return true;
+		else
+			return false;
 	};
 	Uint32 time_passed()
 	{
@@ -153,9 +163,10 @@ public:
 	};
 	void reset(){
 		start_time = SDL_GetTicks();
-	}; // 
-	~Timer(){};
-	Uint32 intervall;	// Milliseconds to go
+	};         //
+	~Timer(){
+	};
+	Uint32 intervall; // Milliseconds to go
 	Uint32 start_time;
 };
 
@@ -165,8 +176,10 @@ class SoundBuffer
 public:
 	SoundBuffer(const char*);
 	~SoundBuffer();
+
 	virtual void play();
 	void set_volume(float);
+
 private:
 	Mix_Chunk *sample;
 };

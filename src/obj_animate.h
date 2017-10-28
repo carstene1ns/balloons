@@ -33,57 +33,58 @@
 
 #define OBJ_ANIMATE 100
 
-#define CLEAR		0
+#define CLEAR   0
 #define NOTHING 255
 
-#define RM_DONE				0
-#define RM_DRAW			1
-#define RM_ANIMATE	2
-#define RM_SEARCH	5
+#define RM_DONE    0
+#define RM_DRAW    1
+#define RM_ANIMATE 2
+#define RM_SEARCH  5
 
 class Game;
 
 class Object_Animate : public Object
 {
-
 public:
- 	Object_Animate();
+	Object_Animate();
 	virtual ~Object_Animate();
-	
-	virtual int get_type()  { return OBJ_ANIMATE; }
 
-	virtual int get_x() { return x; }
-	virtual int get_y() { return y; }
-	
-	virtual void show(int view_x=0, int view_y=0);
+	virtual int get_type()  {
+		return OBJ_ANIMATE;
+	}
+
+	virtual int get_x() {
+		return x;
+	}
+	virtual int get_y() {
+		return y;
+	}
+
+	virtual void show(int view_x = 0, int view_y = 0);
 	virtual bool turn(float time_elapsed);
 
-public:
-	
 	Game *game;
 
-	int mode;							// Mode	(zeichnen/kopieren/animieren/weitersuchen)
+	int mode; // Mode (zeichnen/kopieren/animieren/weitersuchen)
 	int x;
 	int y;
 	Timer *counter;
-	short int tile;				// 1.Tile der Sequenz
-  int max_anim;			// Anzahl Animationen
-	
-	// Werte in der Kollisions-Map aendern
-	void change_map(int Sx,int Sy, short int Mask, unsigned char Item,unsigned char Wall);
+	short int tile; // 1.Tile der Sequenz
+	int max_anim; // Anzahl Animationen
+
+	// Werte in der Kollisions-Map ändern
+	void change_map(int Sx, int Sy, short int Mask, unsigned char Item, unsigned char Wall);
 
 private:
-
 	KollMapCell *koll;
 	int anim;
-	short int item;			// wird nach der Animation gesetzt
+	short int item; // wird nach der Animation gesetzt
 	int itx, ity;
-	
+
 	// zeichne Animation
 	void draw();
-	// suche nach zerstoerbaren WÃ¤nden oder Bomben
+	// suche nach zerstoerbaren Wänden oder Bomben
 	void search();
-	
 };
 
 #endif

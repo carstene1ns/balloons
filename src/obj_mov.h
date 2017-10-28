@@ -31,16 +31,16 @@
 #include "obj.h"
 #include "map.h"
 
-#define OFF	0							// State
-#define ON			1
+#define OFF 0 // State
+#define ON  1
 
-#define		A_LEFT		4
-#define		A_RIGHT	8
-#define		A_UP				1
-#define		A_DOWN	2
+#define A_LEFT  4
+#define A_RIGHT 8
+#define A_UP    1
+#define A_DOWN  2
 
-#define		FULL_BREAK 31
-#define		HALF_BREAK 16
+#define FULL_BREAK 31
+#define HALF_BREAK 16
 
 #define OBJ_MOVING 200
 
@@ -49,40 +49,46 @@ class Game;
 class Object_Moving : public Object
 {
 public:
-	
 	Object_Moving(Game *game);
 	virtual ~Object_Moving();
 
 	Game *game;
-	
- 	virtual void show(int view_x=0, int view_y=0);
 
-	int get_x() const { return x; } 
-	int get_y() const { return y; }
-	void set_x(int nx) { x=nx;}
-	void set_y(int ny) { y=ny;}
-	void set_speed(float new_speed) { speed = new_speed; }
+	virtual void show(int view_x = 0, int view_y = 0);
 
-	int state;								// Status des Sprites
-	int typ;									// Sprite-Typ
+	int get_x() const {
+		return x;
+	}
+	int get_y() const {
+		return y;
+	}
+	void set_x(int nx) {
+		x = nx;
+	}
+	void set_y(int ny) {
+		y = ny;
+	}
+	void set_speed(float new_speed) {
+		speed = new_speed;
+	}
+
+	int state; // Status des Sprites
+	int typ; // Sprite-Typ
 
 protected:
-	
+
 	int x, y;
-  int animations;				// Anzahl Animationen
-	int animCounter;		// Animations-Geschwindigkeit			
-	int cycles;		
-	float cycleCounter; // Zyklenzaehler
+	int animations; // Anzahl Animationen
+	int animCounter; // Animations-Geschwindigkeit
+	int cycles;
+	float cycleCounter; // Zyklenzähler
 	int direction;
-	float moveCounter;// Pixel-Geschwindigkeit			
-	float speed;						// Geschwindigkeit			
+	float moveCounter; // Pixel-Geschwindigkeit
+	float speed; // Geschwindigkeit
 
 	void animate(float time_elapsed);
 	virtual bool checkplayerkollision(void);
-
 };
-
-
 
 //-------------------------------------------------------------------------------
 /// Class Object_Ball
@@ -95,15 +101,14 @@ class Object_Ball : public Object_Moving
 public:
 	Object_Ball(Game *game);
 
-	virtual int get_type()  { return OBJ_BALL; }
- 	virtual void show(int view_x=0, int view_y=0);
+	virtual int get_type() {
+		return OBJ_BALL;
+	}
+	virtual void show(int view_x = 0, int view_y = 0);
 	virtual bool turn(float time_elapsed);
-	
-	bool StartBall(KollMapCell *Koll,KollMapCell *EpKoll);
 
+	bool StartBall(KollMapCell *Koll, KollMapCell *EpKoll);
 };
-
-
 
 //-------------------------------------------------------------------------------
 /// Class Object_Circle
@@ -116,12 +121,11 @@ class Object_Circle : public Object_Moving
 public:
 	Object_Circle(Game *game);
 
-	virtual int get_type()  { return OBJ_CIRCLE; }
+	virtual int get_type() {
+		return OBJ_CIRCLE;
+	}
 	virtual bool turn(float time_elapsed);
-
 };
-
-
 
 //-------------------------------------------------------------------------------
 /// Class Object_UpDown
@@ -134,31 +138,31 @@ class Object_UpDown : public Object_Moving
 public:
 	Object_UpDown(Game *game);
 
-	virtual int get_type()  { return OBJ_UPDOWN; }
+	virtual int get_type() {
+		return OBJ_UPDOWN;
+	}
 	virtual bool turn(float time_elapsed);
-
 };
-
-
 
 //-------------------------------------------------------------------------------
 /// Class Object_Door
 //-------------------------------------------------------------------------------
 
 #define OBJ_DOOR 290
-#define BUSY		2
+#define BUSY 2
 
 class Object_Door : public Object_Moving
 {
 public:
 	Object_Door(Game *game);
 
-	virtual int get_type()  { return OBJ_DOOR; }
+	virtual int get_type() {
+		return OBJ_DOOR;
+	}
 	virtual bool turn(float time_elapsed);
 
 private:
-	int phase;	// Phasenzaehler
-	
+	int phase; // Phasenzaehler
 };
 
 #endif

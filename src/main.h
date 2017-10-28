@@ -34,14 +34,12 @@
 
 #define LEVELS DATA_PREFIX "/levels/%d.DAT"
 
-
 // Tiles
 static const char *tile_sets[] = {
 	DATA_PREFIX "/gfx/tiles00.png",
 	DATA_PREFIX "/gfx/shades.png"
 };
 enum { TILES00, SHADES  };
-
 
 // Images
 static const char *image_files[] = {
@@ -51,22 +49,19 @@ static const char *image_files[] = {
 };
 enum { ICON, FRAME, BALL_PNG };
 
-
 // Fonts
 static const char *font_files[] = {
-    DATA_PREFIX "/fonts/font.ttf",
-    DATA_PREFIX "/fonts/font.ttf"
+	DATA_PREFIX "/fonts/font.ttf",
+	DATA_PREFIX "/fonts/font.ttf"
 };
 enum { FONT20, FONT32 };
 
-
 // Level
 static const char *level_sets[] = {
-    DATA_PREFIX "/levels/%d.DAT",
-    DATA_PREFIX "/levels/%d.dat"
+	DATA_PREFIX "/levels/%d.DAT",
+	DATA_PREFIX "/levels/%d.dat"
 };
 enum { LEVELS00, LEVELS01 };
-
 
 // Player sounds
 #ifndef NO_SOUND
@@ -74,35 +69,35 @@ enum { LEVELS00, LEVELS01 };
 #define NUM_SOUNDS 21
 
 static const char *sound_files[NUM_SOUNDS] = {
-    DATA_PREFIX "/sounds/s_bang.wav",
-    DATA_PREFIX "/sounds/s_beep.wav",
-    DATA_PREFIX "/sounds/s_bomb.wav",
-    DATA_PREFIX "/sounds/s_bump.wav",
-    DATA_PREFIX "/sounds/s_crash.wav",
-    DATA_PREFIX "/sounds/s_door.wav",
-    DATA_PREFIX "/sounds/s_drop.wav",
-    DATA_PREFIX "/sounds/s_exit.wav",
-    DATA_PREFIX "/sounds/s_fade.wav",
-    DATA_PREFIX "/sounds/s_fall.wav",
-    DATA_PREFIX "/sounds/s_furz.wav",
-    DATA_PREFIX "/sounds/s_item.wav",
-    DATA_PREFIX "/sounds/s_key.wav",
-    DATA_PREFIX "/sounds/s_klick.wav",
-    DATA_PREFIX "/sounds/s_move.wav",
-    DATA_PREFIX "/sounds/s_pop.wav",
-    DATA_PREFIX "/sounds/s_twi.wav",
-    DATA_PREFIX "/sounds/s_type.wav",
-    DATA_PREFIX "/sounds/s_wall.wav",
-    DATA_PREFIX "/sounds/s_warp.wav",
-    DATA_PREFIX "/sounds/s_wbrk.wav"
+	DATA_PREFIX "/sounds/s_bang.wav",
+	DATA_PREFIX "/sounds/s_beep.wav",
+	DATA_PREFIX "/sounds/s_bomb.wav",
+	DATA_PREFIX "/sounds/s_bump.wav",
+	DATA_PREFIX "/sounds/s_crash.wav",
+	DATA_PREFIX "/sounds/s_door.wav",
+	DATA_PREFIX "/sounds/s_drop.wav",
+	DATA_PREFIX "/sounds/s_exit.wav",
+	DATA_PREFIX "/sounds/s_fade.wav",
+	DATA_PREFIX "/sounds/s_fall.wav",
+	DATA_PREFIX "/sounds/s_furz.wav",
+	DATA_PREFIX "/sounds/s_item.wav",
+	DATA_PREFIX "/sounds/s_key.wav",
+	DATA_PREFIX "/sounds/s_klick.wav",
+	DATA_PREFIX "/sounds/s_move.wav",
+	DATA_PREFIX "/sounds/s_pop.wav",
+	DATA_PREFIX "/sounds/s_twi.wav",
+	DATA_PREFIX "/sounds/s_type.wav",
+	DATA_PREFIX "/sounds/s_wall.wav",
+	DATA_PREFIX "/sounds/s_warp.wav",
+	DATA_PREFIX "/sounds/s_wbrk.wav"
 };
 #endif
 
 static const char *lang_files[] = {
-    DATA_PREFIX "/S1.TXT",
-    DATA_PREFIX "/S2.TXT",
-    DATA_PREFIX "/S3.TXT",
-    DATA_PREFIX "/S4.TXT"
+	DATA_PREFIX "/S1.TXT",
+	DATA_PREFIX "/S2.TXT",
+	DATA_PREFIX "/S3.TXT",
+	DATA_PREFIX "/S4.TXT"
 };
 enum { DE, EN, FR, NL };
 

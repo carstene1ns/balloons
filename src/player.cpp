@@ -33,7 +33,7 @@ Player::Player()
 	Lives = &iLives[0];
 	Score = &iScore[0];
 	Level = &iLevel[0];
-	ActualPlayer=0;
+	ActualPlayer = 0;
 }
 
 // --------------------------------------------------------------------
@@ -45,37 +45,37 @@ Player::~Player()
 
 }
 
-
 // --------------------------------------------------------------------
 //	Initialisierung aller Spieler
 // --------------------------------------------------------------------
 
 void Player::Init(int Num)
 {
-int i;
-	for(i=0;i<MAX_PLAYER;i++)
+	int i;
+	for (i = 0; i < MAX_PLAYER; i++)
 	{
 		iLives[i] = 0;
 		iScore[i] = 0;
 		iLevel[i] = 1;
 	}
-	for(i=0;i<Num+1;i++)
+	for (i = 0; i < Num + 1; i++)
 	{
 		iLives[i] = 3;
 		iScore[i] = 0;
 		iLevel[i] = 1;
-		sprintf(sName[i],"%i",i);
+		sprintf(sName[i], "%i", i);
 	}
 }
 
 
 // --------------------------------------------------------------------
-//	n�hster Spieler 
+//	nächster Spieler
 // --------------------------------------------------------------------
 
 void Player::Next(void)
 {
-	if(++ActualPlayer >= MAX_PLAYER) ActualPlayer=0;
+	if (++ActualPlayer >= MAX_PLAYER)
+		ActualPlayer = 0;
 
 	Lives = &iLives[ActualPlayer];
 	Score = &iScore[ActualPlayer];
@@ -90,12 +90,11 @@ void Player::Next(void)
 
 bool Player::Check(void)
 {
-	for(int i=0;i<MAX_PLAYER;i++)
-		if(iLives[i])	
-		{	
-			ActualPlayer=i-1;
+	for (int i = 0; i < MAX_PLAYER; i++)
+		if (iLives[i])
+		{
+			ActualPlayer = i - 1;
 			return(true);
 		}
-return(false);
+	return(false);
 }
-

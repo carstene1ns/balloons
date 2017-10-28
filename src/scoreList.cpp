@@ -26,28 +26,26 @@
 
 #include "scoreList.h"
 
-
 // --------------------------------------------------------------------
 //	Konstruktor
 // --------------------------------------------------------------------
 
 ScoreList::ScoreList()
 {
-	strcpy(ScoreFile,"HIGH.DAT");
+	strcpy(ScoreFile, "HIGH.DAT");
 	FILE *hFile;
 
-  if((hFile = fopen(ScoreFile, "rb")) != NULL)
+	if ((hFile = fopen(ScoreFile, "rb")) != NULL)
 	{
-	  fread(List, (size_t)sizeof(HLIST), 10, hFile);
-	  fclose(hFile);
+		fread(List, (size_t)sizeof(HLIST), 10, hFile);
+		fclose(hFile);
 	}
 	else
-		for(int i=0; i<10; i++)
-	  {
-			strcpy((List+i)->Name, "Simply the best");
-			(List+i)->Score= (9-i)*1000;
-	  }
- 
+		for (int i = 0; i < 10; i++)
+		{
+			strcpy((List + i)->Name, "Simply the best");
+			(List + i)->Score = (9 - i) * 1000;
+		}
 }
 
 // --------------------------------------------------------------------
@@ -59,31 +57,29 @@ ScoreList::~ScoreList()
 
 }
 
-
 // --------------------------------------------------------------------
 //	Neuen Score aufnehmen
 // --------------------------------------------------------------------
 
 void ScoreList::Enter(char* Name, unsigned int Score)
 {
-int in;
+	int in;
 
-	for(int i=0; i<10; i++)
-  if((List+i)->Score < Score)
-	{
-	  for(in=9;in>i;in--)
+	for (int i = 0; i < 10; i++)
+		if ((List + i)->Score < Score)
 		{
-			strcpy((List+in)->Name,(List+in-1)->Name);
-			(List+in)->Score = (List+in-1)->Score;
+			for (in = 9; in > i; in--)
+			{
+				strcpy((List + in)->Name, (List + in - 1)->Name);
+				(List + in)->Score = (List + in - 1)->Score;
+			}
+			strcpy((List + i)->Name, Name);
+			(List + i)->Score = Score;
+			break;
 		}
-	  strcpy((List+i)->Name,Name);
-	  (List+i)->Score = Score;
-	  break;
-	} //if
 
 	Save();
 }
-
 
 // --------------------------------------------------------------------
 //	Testen ob Score in Liste aufgenommen werden kann
@@ -91,12 +87,11 @@ int in;
 
 bool ScoreList::Check(unsigned int Score)
 {
-	for(int i=0; i<10; i++)
-		if((List+i)->Score < Score)
+	for (int i = 0; i < 10; i++)
+		if ((List + i)->Score < Score)
 			return(true);
-return(false);
+	return(false);
 }
-
 
 // --------------------------------------------------------------------
 //	Name von Num auslesen
@@ -104,9 +99,8 @@ return(false);
 
 char *ScoreList::GetName(int Num)
 {
-return((List+Num)->Name);
+	return((List + Num)->Name);
 }
-
 
 // --------------------------------------------------------------------
 //	Score von Num auslesen
@@ -114,9 +108,8 @@ return((List+Num)->Name);
 
 int ScoreList::GetScore(int Num)
 {
-return((List+Num)->Score);
+	return((List + Num)->Score);
 }
-
 
 // --------------------------------------------------------------------
 //	Liste speichern
@@ -124,12 +117,11 @@ return((List+Num)->Score);
 
 void ScoreList::Save (void)
 {
-FILE *hFile;
+	FILE *hFile;
 
-	if((hFile = fopen(ScoreFile, "wb")) != NULL)
-  {
-		fwrite(List,(size_t)sizeof(HLIST), 10, hFile);
+	if ((hFile = fopen(ScoreFile, "wb")) != NULL)
+	{
+		fwrite(List, (size_t)sizeof(HLIST), 10, hFile);
 		fclose(hFile);
-  }
-
-} // Save
+	}
+}

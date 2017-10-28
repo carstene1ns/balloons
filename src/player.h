@@ -24,11 +24,9 @@
 #ifndef CPLAYER_H
 #define CPLAYER_H
 
-
 #define MAX_PLAYER 2
 
-
-class Player  
+class Player
 {
 public:
 	Player();

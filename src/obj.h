@@ -35,19 +35,16 @@ using namespace std;
 class Object
 {
 public:
+	virtual ~Object() {
+		return;
+	}
 
-	virtual ~Object() { return; }
-	
-public:
-
-	virtual int get_type() =0;
- 	virtual void show(int view_x=0, int view_y=0)=0;
+	virtual int get_type() = 0;
+	virtual void show(int view_x = 0, int view_y = 0) = 0;
 	virtual bool turn(float time_elapsed) = 0;
 
 private:
-
 	int obj;
-	
 };
 
 #endif

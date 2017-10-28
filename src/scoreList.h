@@ -24,13 +24,10 @@
 #ifndef CSCORELIST_H
 #define CSCORELIST_H
 
+#define HIGHLEN 20 // max. Anz. Buchst. in Highscoreliste
 
-#define HIGHLEN	20							// max. Anz. Buchst. in Highscoreliste
-
-
-class ScoreList  
+class ScoreList
 {
-
 public:
 	ScoreList();
 	virtual ~ScoreList();
@@ -39,17 +36,17 @@ public:
 	{
 		char Name[21];
 		unsigned int Score;
-	}HLIST;
-	
+	} HLIST;
+
 	HLIST List[10];
 	void Enter(char* Name, unsigned int Score);
 	bool Check(unsigned int Score);
 	char *GetName(int);
-	int	  GetScore(int);
+	int GetScore(int);
+
 private:
 	char ScoreFile[13];
 	void Save (void);
-
 };
 
 #endif

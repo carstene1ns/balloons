@@ -1,4 +1,3 @@
-EXTRA_DIST = balloons balloons.dev Makefile.win
 
 # development builds use local data files
 if NO_DEVBUILD

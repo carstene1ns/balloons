@@ -24,10 +24,6 @@
 #ifndef header_object_animate
 #define header_object_animate
 
-#if _MSC_VER > 1000
-#pragma once
-#endif
-
 #include "obj.h"
 #include "map.h"
 

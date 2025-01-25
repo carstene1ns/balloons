@@ -24,10 +24,6 @@
 #ifndef header_object
 #define header_object
 
-#if _MSC_VER > 1000
-#pragma once
-#endif
-
 using namespace std;
 #include "util.h"
 #include "tiledef.h"

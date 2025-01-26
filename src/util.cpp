@@ -174,7 +174,7 @@ DisplayWindow::~DisplayWindow()
 	SDL_Quit();
 }
 
-void DisplayWindow::set_fullscreen(int width, int height, int bpp)
+void DisplayWindow::set_fullscreen()
 {
 	fullscreen = true;
 	SDL_SetWindowFullscreen(m_window, SDL_WINDOW_FULLSCREEN_DESKTOP);

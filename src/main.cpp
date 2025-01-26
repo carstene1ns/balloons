@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 {
 	try
 	{
-		DisplayWindow window("Balloons", 640, 416, false, true);
+		DisplayWindow window("Balloons", 640, 420, false, true);
 
 		World *game_world;
 		game_world = new World(window);

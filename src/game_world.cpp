@@ -305,7 +305,7 @@ void World::on_key_down(const SDL_Keycode key)
 			if (pwindow.is_fullscreen())
 				pwindow.set_windowed();
 			else
-				pwindow.set_fullscreen(SCR_W, SCR_H, SCR_BPP);
+				pwindow.set_fullscreen();
 			break;
 
 		default:
@@ -321,7 +321,7 @@ void World::on_key_down(const SDL_Keycode key)
 			if (pwindow.is_fullscreen())
 				pwindow.set_windowed();
 			else
-				pwindow.set_fullscreen(SCR_W, SCR_H, SCR_BPP);
+				pwindow.set_fullscreen();
 
 			break;
 		}

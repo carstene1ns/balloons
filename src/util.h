@@ -89,7 +89,7 @@ public:
 		return(fullscreen);
 	};
 	void set_windowed();
-	void set_fullscreen(int, int, int);
+	void set_fullscreen();
 	void clear();
 	void flip();
 

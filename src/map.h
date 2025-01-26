@@ -17,12 +17,9 @@
 // Screen resolutions
 #define SCR_W   640
 #define SCR_H   480
-#define SCR_BPP 16
 
 #define XSCROFF 608 // Screenbreite-RASTER
 #define YSCROFF 320 // Screenhöhe-RASTER
-
-#define RGB(r, g, b) r | g | b
 
 typedef struct // Aufbau eines Kollisionsfeld-Eintrages
 {
@@ -98,7 +95,7 @@ class Map
 {
 public:
 	Map();
-	virtual ~Map();
+	~Map();
 
 	KollMapCell *pKoll;
 	MapHeader *pMLevel; // Level-Header

@@ -287,29 +287,8 @@ void Map::DrawTile(int x, int y, int num)
 
 void Map::DrawSprite(int x, int y, int num)
 {
-	SDL_Rect s, t;
-	int sx, sy;
-
-	s.w = t.w = iTilesWidth;
-	s.h = t.h = iTilesHeight;
-
-	sx = (num - 240) % iTilesPerRow;
-	sy = (num - 240) / iTilesPerRow;
-	s.x = sx * iTilesWidth;
-	s.y = sy * iTilesHeight;
-	t.x = x + 5;
-	t.y = y + 5;
-
-	pShades->draw(s, t);
-
-	sx = num % iTilesPerRow;
-	sy = num / iTilesPerRow;
-	s.x = sx * iTilesWidth;
-	s.y = sy * iTilesHeight;
-	t.x = x;
-	t.y = y;
-
-	pTiles->draw(s, t );
+	DrawShadow(x + 5, y + 5, num);
+	DrawTile(x, y, num);
 }
 
 //-----------------------------------------------------------------------------

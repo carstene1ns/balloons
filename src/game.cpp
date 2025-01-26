@@ -21,12 +21,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "game.h"
 #include "main.h"
+
+using std::list;
 
 #define MAKE_LEFT       0x04
 #define MAKE_RIGHT      0x08
@@ -62,7 +60,7 @@ Game::Game(DisplayWindow &window)
 
 	// Wavefiles laden
 #ifndef NO_SOUND
-	for (int i = S_BANG; i < NUM_SOUNDS; i++)
+	for (int i = 0; i < NUM_SOUNDS; i++)
 		m_lpWave[i] = new SoundBuffer(sound_files[i]);
 #endif
 
@@ -82,6 +80,7 @@ Game::Game(DisplayWindow &window)
 	menu_timer = new Timer(1000);
 	begin_time = new Timer(1000);
 	fps = fps_show = 0;
+	Direction = 0;
 }
 
 // --------------------------------------------------------------------
@@ -90,7 +89,7 @@ Game::Game(DisplayWindow &window)
 
 Game::~Game()
 {
-	for (int i = S_BANG; i <= S_BEEP; i++)
+	for (int i = 0; i < NUM_SOUNDS; i++)
 		delete m_lpWave[i];
 
 	delete pFrame;
@@ -104,7 +103,7 @@ Game::~Game()
 	objects.clear();
 }
 
-void Game::on_key_down(const SDLKey &key)
+void Game::on_key_down(const SDL_Keycode key)
 {
 	if (State == GAME_PAUSED)
 	{
@@ -193,7 +192,7 @@ void Game::on_key_down(const SDLKey &key)
 	}
 }
 
-void Game::on_key_up(const SDLKey &key)
+void Game::on_key_up(const SDL_Keycode key)
 {
 	switch (key)
 	{

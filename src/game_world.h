@@ -74,18 +74,18 @@ public:
 	void run(DisplayWindow &window);
 
 private:
-	void on_key_down(SDLKey &key);
+	void on_key_down(const SDL_Keycode key);
 
 	int Lang;
 	int MaxLang;
-	std::string Language;
-	std::string LangNames[20];
+	string Language;
+	string LangNames[20];
 
 	Surface *m_title;
 	DisplayWindow pwindow;
 
-	std::string menu_text[20];
-	std::string guide_text[6];
+	string menu_text[20];
+	string guide_text[6];
 
 	ScoreList HighScore;
 	int State;
@@ -94,7 +94,7 @@ private:
 	bool CodeInput; // Codeeingabe
 	bool bFaded;
 
-	Uint16 m_key; // gedrückte Taste
+	SDL_Keycode m_key; // gedrückte Taste
 	SDL_Event event;
 
 	int CursorPos;
@@ -113,7 +113,7 @@ private:
 
 	void EnterCode();
 	void EnterHigh();
-	void DrawText(std::string InputText, int x, int y, int mode);
+	void DrawText(string InputText, int x, int y, int mode);
 
 	void LoadLanguage(int lang);
 };

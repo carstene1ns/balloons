@@ -26,46 +26,27 @@
 
 Surface::Surface(const char *filename)
 {
-	SDL_Surface *temp;
-
-	temp = IMG_Load(filename);
-	if (!temp)
+	srf = IMG_Load(filename);
+	if (!srf)
 		printf("sdl_Msg: Can't load '%s'\n", filename);
 	else
 		printf("sdl_Msg: Loaded image '%s'\n", filename);
 
-	screen = SDL_DisplayFormat(temp);
-
-	SDL_FreeSurface(temp);
-	m_screen = screen;
+	m_screen = NULL;
 }
 
-Surface::Surface(const char *filename, int alpha)
+Surface::~Surface()
 {
-	SDL_Surface *temp;
-
-	temp = IMG_Load(filename);
-	if (!temp)
-		printf("sdl_Msg: Can't load '%s'\n", filename);
-	else
-		printf("sdl_Msg: Loaded image '%s'\n", filename);
-
-/*
-	SDL_SetColorKey(temp, SDL_SRCCOLORKEY | SDL_RLEACCEL,
-	SDL_MapRGB(temp->format, 255,255,255));
-	SDL_SetAlpha (temp, SDL_SRCALPHA | SDL_RLEACCEL, alpha);
-*/
-	SDL_SetAlpha(temp, SDL_SRCALPHA, alpha);
-	SDL_SetColorKey(temp, SDL_SRCCOLORKEY, SDL_MapRGB(temp->format, 100, 100, 50));
-	screen = SDL_DisplayFormatAlpha(temp);
-
-	SDL_FreeSurface(temp);
-	m_screen = screen;
+	if(srf)
+		SDL_FreeSurface(srf);
 }
 
 int Surface::get_width()
 {
-	return(screen->w);
+	if(srf)
+		return(srf->w);
+
+	return(0);
 }
 
 void Surface::draw(int x, int y)
@@ -76,100 +57,74 @@ void Surface::draw(int x, int y)
 	src.y = 0;
 	dest.x = x;
 	dest.y = y;
-	src.w = dest.w = screen->w;
-	src.h = dest.h = screen->h;
+	src.w = dest.w = srf->w;
+	src.h = dest.h = srf->h;
 
-	SDL_BlitSurface(screen, &src, m_screen, &dest);
+	SDL_BlitSurface(srf, &src, m_screen, &dest);
 }
 
 void Surface::draw(SDL_Rect src, SDL_Rect dest)
 {
-	SDL_BlitSurface(screen, &src, m_screen, &dest);
-}
-
-void Surface::set_alpha(int alpha)
-{
-/*
-	SDL_SetColorKey( screen, SDL_SRCCOLORKEY, 255);
-	SDL_SetColorKey(screen, SDL_SRCCOLORKEY, SDL_MapRGB(screen->format, 255, 0, 0));
-	SDL_SetAlpha(screen, SDL_SRCALPHA | SDL_RLEACCEL, trans);
-*/
-	SDL_SetAlpha(screen, SDL_SRCALPHA, alpha);
+	SDL_BlitSurface(srf, &src, m_screen, &dest);
 }
 
 // FONT -------------------------------------------------
 
 Font::Font(const char *filename, int size)
 {
-	ttf_font = TTF_OpenFont( filename, size);
+	ttf_font = TTF_OpenFont(filename, size);
 	fgcolor.r = fgcolor.g = fgcolor.b = 0xff; // font white
 //	bgcolor.r = bgcolor.g = bgcolor.b = 0x00; // background black
+
+	m_screen = NULL;
+	srf = NULL;
 }
 
 Font::~Font()
 {
-	TTF_CloseFont( ttf_font );
+	TTF_CloseFont(ttf_font);
+	srf = NULL;
 }
 
 void Font::draw(int x, int y, const char *text)
 {
 	SDL_Rect src, dest;
 
-	screen = TTF_RenderUTF8_Blended(ttf_font, text, fgcolor);
-/*
-	screen = TTF_RenderText_Blended(ttf_font, text, fgcolor);
-	screen = TTF_RenderText_Shaded(ttf_font, text, fgcolor, bgcolor);
-	SDL_SetColorKey(screen, SDL_SRCCOLORKEY,0);
-	screen = TTF_RenderText_Solid(ttf_font, text, fgcolor);
-*/
+	srf = TTF_RenderUTF8_Blended(ttf_font, text, fgcolor);
+	if(!srf)
+	{
+		DEBUG("Could not render text");
+		return;
+	}
 	if (x <= 0 | x >= 640)
-		x = (640 - screen->w) / 2; //temp zur sicherheit
+		x = (640 - srf->w) / 2; //temp zur sicherheit
 
 	src.x = 0;
 	src.y = 0;
 	dest.x = x;
 	dest.y = y;
-	src.w = dest.w = screen->w;
-	src.h = dest.h = screen->h;
+	src.w = dest.w = srf->w;
+	src.h = dest.h = srf->h;
 
-	SDL_BlitSurface(screen, &src, m_screen, &dest);
-	SDL_FreeSurface(screen);
+	SDL_BlitSurface(srf, &src, m_screen, &dest);
+	SDL_FreeSurface(srf);
 }
 
 int Font::get_width(const char *text)
 {
 	int w;
-	TTF_SizeText(ttf_font, text, &w, NULL);
-	return(w);
+	if(TTF_SizeUTF8(ttf_font, text, &w, NULL) == 0)
+		return(w);
+
+	return(0);
 }
 
-// DISPLAY -------------------------------------------------
-
-Display::Display()
-{
-	VideoInfo = SDL_GetVideoInfo();
-	VideoMem = VideoInfo->video_mem;
-	std::cout << "Die Grafikkarte besitzt einen Videospeicher von " << VideoMem << " kB" << std::endl;
-
-	hw_available = VideoInfo->hw_available;
-	if (!hw_available)
-	{
-		std::cerr << "SDL_HWSURFACE wird nicht unterstützt" << std::endl;
-	}
-
-	bpp = VideoInfo->vfmt->BitsPerPixel;
-	std::cout << "Die beste Farbtiefe ist " << bpp << " Bit" << std::endl;
-};
-
 // DISPLAYWINDOW -------------------------------------------------
-
-DisplayWindow::DisplayWindow(){
-};
 
 DisplayWindow::DisplayWindow(const char *title, int width, int height, bool fullscreen, bool rezise)
 {
 	int result;
-//	SDL_Surface *temp;
+	SDL_Surface *icon;
 
 	DEBUG("Init the SDL...");
 	result = SDL_Init(SDL_INIT_VIDEO);
@@ -179,37 +134,39 @@ DisplayWindow::DisplayWindow(const char *title, int width, int height, bool full
 		DEBUG("Failed: Initing SDL...");
 		return;
 	}
-	m_screen = SDL_SetVideoMode(width, height, 32, SDL_SWSURFACE);
+	m_screen = SDL_CreateRGBSurfaceWithFormat(0, width, height, 32, SDL_PIXELFORMAT_BGRA32);
 	fullscreen = false;
 
-	SDL_WM_SetCaption( title, NULL );
-/*
-	temp = IMG_Load(image_files[ICON]);
-	if( !temp )
-		printf("sdl_Msg: Can't load '%s'\n", image_files[ICON]);
-	else
-		printf("sdl_Msg: Loaded image '%s'\n", image_files[ICON]);
-	SDL_WM_SetIcon(temp, NULL);
-	delete temp;
-*/
+	m_window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		width, height, SDL_WINDOW_RESIZABLE);
+	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_PRESENTVSYNC|SDL_RENDERER_TARGETTEXTURE);
+	SDL_RenderSetLogicalSize(m_renderer, width, height);
+	m_texture = SDL_CreateTexture(m_renderer, SDL_PIXELFORMAT_BGRA32,
+		SDL_TEXTUREACCESS_STREAMING, width, height);
+
+	SDL_SetWindowTitle(m_window, title);
+
+	icon = IMG_Load(image_files[ICON]);
+	if(icon) {
+		SDL_SetWindowIcon(m_window, icon);
+		SDL_FreeSurface(icon);
+	}
+
 	// Init ttf
 	TTF_Init();
 
 #ifndef NO_SOUND
 	result = SDL_InitSubSystem(SDL_INIT_AUDIO);
+	if (result != -1)
+	{
+		result = Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048);
+	}
 	if (result == -1)
 	{
 		DEBUG("Failed: Initing SDL_Sound...");
-		return;
-	}
-	result = Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 2048);
-	if (result == -1)
-	{
-		DEBUG("Failed: Initing Sound...");
-		return;
 	}
 #endif
-//	SDL_ShowCursor(SDL_FALSE);
+	SDL_ShowCursor(SDL_FALSE);
 }
 
 DisplayWindow::~DisplayWindow()
@@ -219,21 +176,24 @@ DisplayWindow::~DisplayWindow()
 	Mix_CloseAudio();
 #endif
 	TTF_Quit();
-//	SDL_ShowCursor(SDL_TRUE);
+	SDL_ShowCursor(SDL_TRUE);
+	SDL_FreeSurface(m_screen);
+	SDL_DestroyTexture(m_texture);
+	SDL_DestroyRenderer(m_renderer);
+	SDL_DestroyWindow(m_window);
 	SDL_Quit();
 }
 
 void DisplayWindow::set_fullscreen(int width, int height, int bpp)
 {
 	fullscreen = true;
-	m_screen = SDL_SetVideoMode(640, 416, 32, SDL_SWSURFACE | SDL_FULLSCREEN);
+	SDL_SetWindowFullscreen(m_window, SDL_WINDOW_FULLSCREEN_DESKTOP);
 }
 
 void DisplayWindow::set_windowed()
 {
 	fullscreen = false;
-	m_screen = SDL_SetVideoMode(640, 416, 32, SDL_SWSURFACE);
-	SDL_Flip(m_screen);
+	SDL_SetWindowFullscreen(m_window, 0);
 }
 
 void DisplayWindow::clear()
@@ -241,27 +201,36 @@ void DisplayWindow::clear()
 	SDL_FillRect(m_screen, NULL, 0);
 }
 
+void DisplayWindow::flip()
+{
+	SDL_RenderClear(m_renderer);
+	SDL_UpdateTexture(m_texture, NULL, m_screen->pixels, m_screen->pitch);
+	SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
+	SDL_RenderPresent(m_renderer);
+}
+
 SoundBuffer::SoundBuffer(const char* src)
 {
 	sample = Mix_LoadWAV(src);
 	if (!sample)
 		printf("Mix_LoadWAV: failed %s %s\n", Mix_GetError(), src);
-	// handle error
 }
 
 SoundBuffer::~SoundBuffer()
 {
-	delete sample;
-	Mix_CloseAudio();
+	if(sample)
+		Mix_FreeChunk(sample);
 }
 
 void SoundBuffer::play()
 {
 #ifndef NO_SOUND
-	Mix_PlayChannel(-1, sample, 0);
+	if(sample)
+		Mix_PlayChannel(-1, sample, 0);
 #endif
 }
 void SoundBuffer::set_volume(float vol)
 {
-	sample->volume = (Uint8)(128.0 * vol);
+	if(sample)
+		sample->volume = (Uint8)(128.0 * vol);
 }

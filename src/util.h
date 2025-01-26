@@ -24,26 +24,23 @@
 #ifndef UTILITIESUTIL_H
 #define UTILITIESUTIL_H
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#include <SDL/SDL_ttf.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 #ifndef NO_SOUND
-#include <SDL/SDL_mixer.h>
+#include <SDL_mixer.h>
 #endif
 
-using namespace std;
 #include <cstdlib>
 #include <string>
+using std::string;
 
 // Debugging macros
-// use gcc -D ... to change these values without touching the sources
 #define SHOW_DEBUG      1
 
 #if SHOW_DEBUG == 1
-#define DEBUG(msg) printf("Balloons_Msg: "); printf(msg); printf("\n");
-#define SHOW_VERSION() printf("Balloons_Msg: "); \
-	printf("Version: %s", VERSION); \
-	printf("\n");
+#define DEBUG(msg) printf("Balloons_Msg: %s\n", msg);
+#define SHOW_VERSION() printf("Balloons_Msg: Version: %s\n", VERSION);
 #else
     #define DEBUG(msg)
     #define SHOW_VERSION()
@@ -58,12 +55,9 @@ using namespace std;
 class Surface
 {
 public:
-	Surface(){
-	};
+	Surface() = default;
 	Surface(const char *filename);
-	Surface(const char *filename, int alpha);
-	~Surface(){
-	};
+	~Surface();
 
 	void draw(int, int);
 	void draw(SDL_Rect, SDL_Rect);
@@ -72,10 +66,9 @@ public:
 	{
 		m_screen = screen;
 	}
-	void set_alpha(int);
 
-private:
-	SDL_Surface *screen, *m_screen;
+protected:
+	SDL_Surface *srf, *m_screen;
 };
 
 class Font : public Surface
@@ -86,31 +79,11 @@ public:
 
 	void draw(int x, int y, const char *text);
 	int get_width(const char *);
-	void setscreen(SDL_Surface *screen)
-	{
-		m_screen = screen;
-	}
 
 private:
-	SDL_Surface *screen, *m_screen;
 	TTF_Font *ttf_font;
 	SDL_Color fgcolor;
 	// SDL_Color bgcolor;
-};
-
-// DISPLAY -------------------------------------------------
-
-class Display
-{
-public:
-	Display();
-	~Display(){
-	};
-private:
-	const SDL_VideoInfo *VideoInfo;
-	Uint32 VideoMem; // Size of (available) video memory
-	Uint32 hw_available; // indicated support of SDL_HWSURFACE
-	Uint8 bpp; // the best pixel format (colour depth)
 };
 
 // DISPLAYWINDOW -------------------------------------------------
@@ -118,22 +91,22 @@ private:
 class DisplayWindow
 {
 public:
-	DisplayWindow();
+	DisplayWindow() = default;
 	DisplayWindow(const char*, int, int, bool, bool);
 	~DisplayWindow();
 
-	bool is_fullscreen(){
+	inline bool is_fullscreen(){
 		return(fullscreen);
 	};
 	void set_windowed();
 	void set_fullscreen(int, int, int);
 	void clear();
-	void flip()
-	{
-		SDL_Flip( m_screen );
-	}
+	void flip();
 
 	SDL_Surface *m_screen;
+	SDL_Window *m_window;
+	SDL_Texture *m_texture;
+	SDL_Renderer *m_renderer;
 
 private:
 	bool fullscreen;

@@ -24,7 +24,6 @@
 #ifndef header_object
 #define header_object
 
-using namespace std;
 #include "util.h"
 #include "tiledef.h"
 

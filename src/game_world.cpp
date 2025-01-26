@@ -83,10 +83,13 @@ World::~World()
 {
 	DEBUG("Shutting down the game-world...");
 
-	delete game;
+	delete menu_timer;
 	delete m_title;
+	delete font20;
+	delete font32;
+	delete game;
 
-	DEBUG( "game-world is shutdown!" );
+	DEBUG("game-world is shutdown!");
 }
 
 void World::LoadLanguage(int lang)
@@ -162,6 +165,7 @@ void World::run(DisplayWindow &window)
 						InputText[CursorPos] = '-';
 					else
 						InputText[CursorPos] = ' ';
+					InputText[CursorPos+1] = '\0';
 					menu_timer->reset();
 				}
 				if (CodeInput)
@@ -189,12 +193,11 @@ void World::run(DisplayWindow &window)
 			if (event.type == SDL_KEYDOWN)
 			{
 				on_key_down(event.key.keysym.sym);
-//				m_key = event.key.keysym.sym;
 			}
 	}
 }
 
-void World::on_key_down(SDLKey &key)
+void World::on_key_down(const SDL_Keycode key)
 {
 	menu_timer->reset();
 
@@ -491,7 +494,7 @@ void World::ShowGuide(void)
 	game->FadeScr(F_OUT | F_FULL, 0);
 	game->PlayWave(S_FADE);
 
-	ifstream guide(lang_files[Lang]);
+	std::ifstream guide(lang_files[Lang]);
 
 	do
 	{
@@ -603,7 +606,7 @@ void World::EnterCode()
 
 void World::EnterHigh()
 {
-	if (m_key < 0x80 && m_key > 0) // printable char
+	if (m_key <= SDLK_z && m_key >= SDLK_SPACE) // printable char
 	{
 		game->PlayWave(S_TYPE);
 		InputText[CursorPos] = (char)m_key;

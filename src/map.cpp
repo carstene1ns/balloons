@@ -28,6 +28,8 @@
 #include "tiletab.h"
 #include "tiledef.h"
 
+using std::list;
+
 // --------------------------------------------------------------------
 //	Konstruktion/Destruktion
 // --------------------------------------------------------------------
@@ -77,7 +79,7 @@ void Map::Init(Game *parent)
 	game = parent;
 
 	// Tiles einlesen
-	pTiles =  new Surface(tile_sets[TILES00], 255); // Blitting with Colorkey
+	pTiles =  new Surface(tile_sets[TILES00]);
 	pTiles->setscreen(game->pwindow.m_screen);
 
 	// Setze Tile Dimensionen
@@ -85,7 +87,7 @@ void Map::Init(Game *parent)
 	iTilesHeight = RASTER;
 	iTilesPerRow = pTiles->get_width() / iTilesWidth;
 
-	pShades =  new Surface(tile_sets[SHADES], 128); // Blitting with alpha-Channel
+	pShades =  new Surface(tile_sets[SHADES]);
 	pShades->setscreen(game->pwindow.m_screen);
 }
 

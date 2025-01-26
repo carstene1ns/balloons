@@ -24,7 +24,6 @@
 #ifndef header_game
 #define header_game
 
-using namespace std;
 #include <cstdlib>
 #include <cstring>
 #include <list>
@@ -76,7 +75,7 @@ using namespace std;
 #define F_FULL  8
 
 enum {
-	S_BANG, S_BEEP, S_BOMB,
+	S_BANG = 0, S_BEEP, S_BOMB,
 	S_BUMP, S_CRASH, S_DOOR,
 	S_DROP, S_EXIT, S_FADE,
 	S_FALL, S_FURZ, S_ITEM,
@@ -95,7 +94,7 @@ public:
 
 	Map map;
 
-	list<Object*> objects;
+	std::list<Object*> objects;
 
 	int State; // Spielstatus
 	string Language; // Sprache
@@ -162,8 +161,8 @@ private:
 	short int KollRichtung;
 	unsigned int HorKolFlg, VerKolFlg;
 
-	void on_key_down(const SDLKey &key);
-	void on_key_up(const SDLKey &key);
+	void on_key_down(const SDL_Keycode key);
+	void on_key_up(const SDL_Keycode key);
 
 	void GameMenu(void); // Spielermenue (Score, Items, Inventar, etc.)
 

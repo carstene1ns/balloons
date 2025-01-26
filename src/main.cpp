@@ -41,7 +41,8 @@ int main(int argc, char* argv[])
 	}
 	catch (...)
 	{
-		cout << "unrecognized exeception caught..." << endl;
+		std::cout << "unrecognized exeception caught...\n";
+		return 1;
 	}
 	return 0;
 }

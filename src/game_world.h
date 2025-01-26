@@ -17,9 +17,9 @@
 #include "util.h"
 
 #define PRESENT  0
-#define MENUTIME 6
-#define HIGHTIME 7
-#define DEMOTIME 8
+#define MENUTIME 3
+#define HIGHTIME 4
+#define DEMOTIME 5
 
 #define MEN_SHOW  100
 #define MEN_GUIDE 107
@@ -90,7 +90,7 @@ private:
 	int CursorPos;
 	char InputText[31]; // Textfeld für Tastatureingaben
 
-	int menutimes[8]; // Standzeiten in Sekunden
+	int menutimes[6]; // Standzeiten in Sekunden
 	Timer* menu_timer;
 
 	bool m_done;

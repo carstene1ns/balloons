@@ -41,6 +41,7 @@ World::World(DisplayWindow &window)
 		LangNames[i] = Language.substr(a, 2);
 
 	MaxLang = i;
+	Lang = 0;
 	// Lade Texte
 	LoadLanguage(0);
 
@@ -55,11 +56,8 @@ World::World(DisplayWindow &window)
 
 	// Anzeigedauer in Sekunden
 	menutimes[PRESENT] = 3;
-	menutimes[PRESENT + 1] = 1;
+	menutimes[PRESENT + 1] = 4;
 	menutimes[PRESENT + 2] = 4;
-	menutimes[PRESENT + 3] = 5;
-	menutimes[PRESENT + 4] = 3;
-	menutimes[PRESENT + 5] = 4;
 	menutimes[MENUTIME] = 16;
 	menutimes[HIGHTIME] = 8;
 	menutimes[DEMOTIME] = 1;
@@ -351,9 +349,6 @@ void World::Show()
 			case PRESENT:
 			case PRESENT + 1:
 			case PRESENT + 2:
-			case PRESENT + 3:
-			case PRESENT + 4:
-			case PRESENT + 5:
 				ShowProlog(diff);
 				break;
 
@@ -443,31 +438,24 @@ void World::ShowProlog(int type)
 	{
 		case PRESENT:
 			pwindow.clear();
-			DrawText("-S-v-N-", 0, 168, SET_CENTER);
+			DrawText("-S-v-N-", 0, 118, SET_CENTER);
+			DrawText("Software vom Niederrhein", 0, 148, SET_CENTER);
+			DrawText(menu_text[LBL_PRESENT], 0, 218, SET_CENTER);
 			break;
 		case PRESENT + 1:
-			DrawText("Software vom Niederrhein", 0, 168, SET_CENTER);
+			m_title->draw((SCR_W - m_title->get_width()) / 2, 160);
+			DrawText("(c) 1993-2007", 0, 228, SET_CENTER);
 			break;
 		case PRESENT + 2:
-			DrawText(menu_text[LBL_PRESENT], 0, 168, SET_CENTER);
-			break;
-		case PRESENT + 3:
-			m_title->draw((SCR_W - m_title->get_width()) / 2, 160);
-			break;
-		case PRESENT + 4:
-			DrawText("(c) 1993-2007", 0, 168, SET_CENTER);
-			break;
-		case PRESENT + 5:
 			// Spielidee
-			DrawText(menu_text[LBL_CREATED], 0, 152, SET_CENTER | SET_SMALL);
-			DrawText("Roland & Michael Lagarden", 0, 184, SET_CENTER);
-			break;
-		case PRESENT + 6:
+			DrawText(menu_text[LBL_CREATED], 0, 62, SET_CENTER | SET_SMALL);
+			DrawText("Roland & Michael Lagarden", 0, 94, SET_CENTER);
+
 			// Landschaften
-			DrawText(menu_text[LBL_LANDSCAPES], 0, 120, SET_CENTER | SET_SMALL);
-			DrawText("Dennis Becker", 0, 160, SET_CENTER);
-			DrawText("Roland Lagarden", 0, 192, SET_CENTER);
-			DrawText("Michael Lagarden", 0, 224, SET_CENTER);
+			DrawText(menu_text[LBL_LANDSCAPES], 0, 150, SET_CENTER | SET_SMALL);
+			DrawText("Dennis Becker", 0, 190, SET_CENTER);
+			DrawText("Roland Lagarden", 0, 222, SET_CENTER);
+			DrawText("Michael Lagarden", 0, 254, SET_CENTER);
 			break;
 	}
 }
@@ -521,7 +509,7 @@ void World::ShowGuide(void)
 				if (event.type == SDL_KEYDOWN)
 				{
 					on_key_down(event.key.keysym.sym);
-//					m_key = 1;
+					m_key = event.key.keysym.sym;
 					if (guide.eof())
 						State = MEN_SHOW;
 				}

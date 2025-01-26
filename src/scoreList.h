@@ -20,7 +20,7 @@ class ScoreList
 {
 public:
 	ScoreList();
-	virtual ~ScoreList();
+	~ScoreList();
 
 	typedef struct
 	{
@@ -31,11 +31,11 @@ public:
 	HLIST List[10];
 	void Enter(char* Name, unsigned int Score);
 	bool Check(unsigned int Score);
-	char *GetName(int);
+	const char *GetName(int);
 	int GetScore(int);
 
 private:
-	char ScoreFile[13];
+	char *ScoreFile;
 	void Save (void);
 };
 

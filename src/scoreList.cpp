@@ -15,6 +15,8 @@
 #include <cstring>
 
 #include "scoreList.h"
+#include "util.h"
+#include "cfgpath.h"
 
 // --------------------------------------------------------------------
 //	Konstruktor
@@ -22,19 +24,34 @@
 
 ScoreList::ScoreList()
 {
-	strcpy(ScoreFile, "HIGH.DAT");
+	ScoreFile = new char[MAX_PATH+8];
+
+	get_user_data_folder(ScoreFile, MAX_PATH, "balloons");
+	if (ScoreFile[0] == '\0') {
+		printf("Unable to find user data directory.\n");
+		return;
+	}
+
+	strcat(ScoreFile, "high.dat");
 	FILE *hFile;
 
 	if ((hFile = fopen(ScoreFile, "rb")) != NULL)
 	{
+		DEBUG("Loading high score");
 		fread(List, (size_t)sizeof(HLIST), 10, hFile);
 		fclose(hFile);
 	}
 	else
-		for (int i = 0; i < 10; i++)
+		strcpy(List[0].Name, "Michael");
+		List[0].Score = 1000;
+		strcpy(List[1].Name, "Roland");
+		List[1].Score = 900;
+		strcpy(List[2].Name, "Carsten");
+		List[2].Score = 800;
+		for (int i = 3; i < 10; i++)
 		{
-			strcpy((List + i)->Name, "Simply the best");
-			(List + i)->Score = (9 - i) * 1000;
+			strcpy(List[i].Name, "Simply the best");
+			List[i].Score = (10 - i) * 100;
 		}
 }
 
@@ -44,7 +61,7 @@ ScoreList::ScoreList()
 
 ScoreList::~ScoreList()
 {
-
+	delete[] ScoreFile;
 }
 
 // --------------------------------------------------------------------
@@ -56,15 +73,15 @@ void ScoreList::Enter(char* Name, unsigned int Score)
 	int in;
 
 	for (int i = 0; i < 10; i++)
-		if ((List + i)->Score < Score)
+		if (List[i].Score < Score)
 		{
 			for (in = 9; in > i; in--)
 			{
-				strcpy((List + in)->Name, (List + in - 1)->Name);
-				(List + in)->Score = (List + in - 1)->Score;
+				strcpy(List[in].Name, List[in - 1].Name);
+				List[in].Score = List[in - 1].Score;
 			}
-			strcpy((List + i)->Name, Name);
-			(List + i)->Score = Score;
+			strcpy(List[i].Name, Name);
+			List[i].Score = Score;
 			break;
 		}
 
@@ -78,7 +95,7 @@ void ScoreList::Enter(char* Name, unsigned int Score)
 bool ScoreList::Check(unsigned int Score)
 {
 	for (int i = 0; i < 10; i++)
-		if ((List + i)->Score < Score)
+		if (List[i].Score < Score)
 			return(true);
 	return(false);
 }
@@ -87,9 +104,9 @@ bool ScoreList::Check(unsigned int Score)
 //	Name von Num auslesen
 // --------------------------------------------------------------------
 
-char *ScoreList::GetName(int Num)
+const char *ScoreList::GetName(int Num)
 {
-	return((List + Num)->Name);
+	return(List[Num].Name);
 }
 
 // --------------------------------------------------------------------
@@ -98,7 +115,7 @@ char *ScoreList::GetName(int Num)
 
 int ScoreList::GetScore(int Num)
 {
-	return((List + Num)->Score);
+	return(List[Num].Score);
 }
 
 // --------------------------------------------------------------------
@@ -109,8 +126,15 @@ void ScoreList::Save (void)
 {
 	FILE *hFile;
 
+	if (ScoreFile[0] == '\0')
+	{
+		return;
+	}
+
 	if ((hFile = fopen(ScoreFile, "wb")) != NULL)
 	{
+		DEBUG("Saving high score");
+
 		fwrite(List, (size_t)sizeof(HLIST), 10, hFile);
 		fclose(hFile);
 	}

@@ -11,32 +11,25 @@
  *   along with balloons; if not, see <http://www.gnu.org/licenses/>.      *
  ***************************************************************************/
 
-#ifndef B_SCORELIST_H
-#define B_SCORELIST_H
+#ifndef B_OBJECT_H
+#define B_OBJECT_H
 
-#define HIGHLEN 20 // max. Anz. Buchst. in Highscoreliste
+#include "util.h"
+#include "tiledef.h"
 
-class ScoreList
+class Object
 {
 public:
-	ScoreList();
-	virtual ~ScoreList();
+	virtual ~Object() {
+		return;
+	}
 
-	typedef struct
-	{
-		char Name[21];
-		unsigned int Score;
-	} HLIST;
-
-	HLIST List[10];
-	void Enter(char* Name, unsigned int Score);
-	bool Check(unsigned int Score);
-	char *GetName(int);
-	int GetScore(int);
+	virtual int get_type() = 0;
+	virtual void show(int view_x = 0, int view_y = 0) = 0;
+	virtual bool turn(float time_elapsed) = 0;
 
 private:
-	char ScoreFile[13];
-	void Save (void);
+	int obj;
 };
 
-#endif // B_SCORELIST_H
+#endif // B_OBJECT_H

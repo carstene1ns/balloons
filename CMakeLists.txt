@@ -24,11 +24,11 @@ add_executable(balloons
 	src/main.h
 	src/map.cpp
 	src/map.h
-	src/obj.h
-	src/obj_animate.cpp
-	src/obj_animate.h
-	src/obj_mov.cpp
-	src/obj_mov.h
+	src/object.h
+	src/object_animate.cpp
+	src/object_animate.h
+	src/object_moving.cpp
+	src/object_moving.h
 	src/player.cpp
 	src/player.h
 	src/scoreList.cpp

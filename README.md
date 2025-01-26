@@ -20,8 +20,9 @@ Copyright (C) 2007 by -S-v-N-  R.& M. Lagarden
 
     BALLOONS is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    [GNU General Public License](COPYING) for more details.
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the [GNU General Public License](COPYING) for more details.
 
 ## Building
 
@@ -35,4 +36,5 @@ cmake --install builddir
 
 ## Playing
 
-See the [online manual](doc/index.html) for instructions on how to play BALLOONS.
+See the [online manual](doc/DOCUMENTATION.md) for instructions on how
+to play BALLOONS.

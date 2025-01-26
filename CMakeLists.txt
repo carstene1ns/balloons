@@ -75,4 +75,11 @@ endif()
 
 install(TARGETS balloons RUNTIME)
 install(DIRECTORY data/ TYPE DATA)
-install(DIRECTORY doc/ TYPE DOC)
+install(FILES doc/index.html TYPE DOC)
+
+add_custom_target(doc
+	COMMAND python make_doc.py
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doc
+	COMMENT "Updating HTML Documentation"
+	VERBATIM
+	SOURCES doc/DOCUMENTATION.md)

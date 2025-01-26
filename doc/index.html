@@ -1,200 +1,187 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
-<META NAME="Author" CONTENT="Roland Lagarden">
-<TITLE>Balloons - prick 'n' puzzle (documentation)</TITLE>
-<META NAME="DESCRIPTION" CONTENT="Balloons - prick 'n' puzzle">
-<META NAME="KEYWORDS" CONTENT="Balloons, game, linux">
-<STYLE type=text/css>
-A:link { COLOR: #0000ff; TEXT-DECORATION: none }
-A:visited { COLOR: #0000ff; TEXT-DECORATION: none }
-A:active { COLOR: #0096ff; TEXT-DECORATION: none }
-A:hover { COLOR: #0096ff; TEXT-DECORATION: underline }
-</STYLE>
-</HEAD>
-<BODY><FONT FACE="Arial">
-
-<TABLE WIDTH=675><!-- kopf -->
- <TR>
-  <TD ALIGN=RIGHT><FONT SIZE="+2" FACE="Arial Black">S-v-N</FONT> Software vom Niederrhein</TD>
- </TR>
-</TABLE>
-<TABLE WIDTH=675>
-<TR><TD><HR noshade size="3"></TD></TR>
-<TR><TD WIDTH=1 HEIGHT=10></TD></TR>
-</TABLE>
- </TD>
-  <TD WIDTH=10 HEIGHT=1></TD>
-  <TD>
-   <TABLE BORDER=0 WIDTH=650><!-- cont -->
-    <TR VALIGN=TOP>
-     <TD>
-<div align="center"><h1>BALLOONS</h1><font size="-1"><h3>prick 'n' puzzle</h3>alpha version 0.1.8-3 - Aug 6, 2007<br>
-&copy;1993-2007 by M. und R. Lagarden<br>published under the GPL</font><p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Balloons - prick 'n' puzzle (documentation)</title>
+    <meta name="Author" content="Roland Lagarden">
+    <meta name="Description" content="Balloons - prick 'n' puzzle">
+    <meta name="Keywords" content="Balloons, game, linux">
+    <style>
+      body { font-face: Arial, sans-serif }
+      a, a:link, a:visited { color: #0000ff; text-decoration: none }
+      a:active { color: #0096ff }
+      a:hover { color: #0096ff; text-decoration: underline }
+      hr { color: #990000 }
+      kbd { border: 1px ridge #cccccc; padding: 0 2px; box-shadow: 2px 2px #cccccc }
+    </style>
+  </head>
+  <body>
+<p><strong>S-v-N</strong> Software vom Niederrhein presents</p>
+<hr>
+<h1 id="balloons-prick-n-puzzle">BALLOONS - prick 'n' puzzle</h1>
+<p>alpha version 0.1.8-3 - Aug 6, 2007<br>
+©1993-2007 by M. und R. Lagarden<br>
+published under the GPL</p>
+<hr>
+<h2 id="content">Content</h2>
+<div class="toc">
+<ul>
+<li><a href="#balloons-prick-n-puzzle">BALLOONS - prick 'n' puzzle</a><ul>
+<li><a href="#content">Content</a></li>
+<li><a href="#i-the-game">I. The game</a><ul>
+<li><a href="#1-balloons-introduces-itself">1. BALLOONS introduces itself</a></li>
+<li><a href="#2-getting-started">2. Getting started</a></li>
+<li><a href="#3-the-main-menu">3. The main menu</a></li>
+<li><a href="#4-starting-to-play">4. Starting to play</a></li>
+<li><a href="#5-main-keys-when-playing">5. Main keys when playing</a></li>
+</ul>
+</li>
+<li><a href="#ii-items-and-elements">II. Items and elements</a><ul>
+<li><a href="#1-this-may-be-useful-for-you">1. this may be useful for you ...</a></li>
+<li><a href="#2-this-might-be-bad-for-you">2. This might be bad for you ...</a></li>
+<li><a href="#3-this-could-be-nasty">3. This could be nasty ...</a></li>
+</ul>
+</li>
+<li><a href="#iii-system-requirements">III. System requirements</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<HR noshade size="5" color=#FF0000>
-
-<h2>Content</h2>
-
-I. <a href="#I">the game</a>
- <ol start="1" type="1">
-  <li>BALLOONS introduces itself</li>
-  <li>getting started</li>
-  <li>the main menu</li>
-  <li>starting to play</li>
-  <li>main keys when playing</li>
- </ol>
-II. <a href="#II">items and elements</a>
- <ol start="1" type="1">
- <li>this may be useful for you ...</li>
- <li>this might be bad for you ...</li>
- <li>this could be nasty ...</li>
- </ol>
-III.<a href="#III">system requirements</a>
-
-<a name="I"><hr noshade size="1"></a>
-<h3>I. the game</h3>
-<h4>1. BALLOONS introduces itself</h4>
-<p>BALLOONS has got 99 level which can consist of one or up to eighteen screens.<br>
-BALLOONS has a little bit of  <i>SOKOBAN</i>, a nice portion <b>OXYD&trade;</b> und a lot of BALLOONS!<br>
-There will be mazes, tricky stuff, time based level, and you can be taken for a ride either!<br>
-BALLOONS intends to make you laugh, to stress you, and to make you pore.<br>
-The landscapes of BALLOONS come with miscellaneous elements. Some walls that might look inconspicuous, may offer unimagined features: they might be moveable, destroyable (listen to the sound...), or you can walk right through them.<br>
-The aim of the game is to collect a certain number of coins and to go searching the exit to the next landscape.<br>
-These landscape don't just contain the usual obstacles like walls, abysses and various enemies, but there is also a bunch of balloons containing most of the coins to be found.
-</p>
-
-<h4>2. getting started</h4>
-<p>BALLOONS is available as binaries and source distribution for windows or linux-like operation systems:<br>
- After unpacking the sources, you will have to compile it on a shell using <font face="Courier">./configure &#038;&#038; make</font>. 
- (Installing it won't work properly)<br>
- The binary will be started by executing ./balloons (POSIX) or balloons.exe (Windows).<br>
- This will start BALLOONS in windowed mode. 
- When the Intro finishes, you'll find yourself in the main menu.</p>
-<h4>3. the main menu</h4>
-These keys lead to the following actions:
-
+<hr>
+<h2 id="i-the-game">I. The game</h2>
+<h3 id="1-balloons-introduces-itself">1. BALLOONS introduces itself</h3>
+<p>BALLOONS has got 99 level which can consist of one or up to eighteen screens.
+BALLOONS has a little bit of <em>SOKOBAN</em>, a nice portion <strong>OXYD™</strong> und a lot of
+BALLOONS! There will be mazes, tricky stuff, time based level, and you can be
+taken for a ride either! BALLOONS intends to make you laugh, to stress you,
+and to make you pore.
+The landscapes of BALLOONS come with miscellaneous elements. Some walls that
+might look inconspicuous, may offer unimagined features: they might be moveable,
+destroyable (listen to the sound...), or you can walk right through them.
+The aim of the game is to collect a certain number of coins and to go searching
+the exit to the next landscape.
+These landscape don't just contain the usual obstacles like walls, abysses and
+various enemies, but there is also a bunch of balloons containing most of the
+coins to be found.</p>
+<h3 id="2-getting-started">2. Getting started</h3>
+<p>BALLOONS is available as binaries and source distribution for Windows or
+linux-like operation systems:
+After unpacking the sources, you will have to compile it on a shell.
+The binary will be started by executing <code>./balloons</code> (POSIX) or
+<code>balloons.exe</code> (Windows).
+This will start BALLOONS in windowed mode. When the Intro finishes, you'll find
+yourself in the main menu.</p>
+<h3 id="3-the-main-menu">3. The main menu</h3>
+<p>These keys lead to the following actions:</p>
 <ul>
-<li>F2: starts a new game beginning from level one with three lives.</li>
-<li>F3: swaps between one or two player mode. In two player mode, each player acts until he has solved his current level.</li>
-<li>F4: lets you enter a level code, so you can (re)start from the level you finished the last time.</li>
-<li><em>F6: lets you choose between the english, german french or dutch language (will be released in a later version...).</em></li>
-<li>F7: a short version of this instruction will then be displayed. Any key swaps to the next page, <font face="Courier">ESC</font> brings you back to the main menu.</li>
-<li>F8: the top ten high score list will be displayed.</li>
-<li>F9: a selection of level is shown. <font face="Courier">ESC</font> brings you back to the main menu.</li>
-<li>F10: quits BALLOONS.</li>
+<li><span class="keys"><kbd class="key-f2">F2</kbd></span>: starts a new game beginning from level one with three lives.</li>
+<li><span class="keys"><kbd class="key-f3">F3</kbd></span>: swaps between one or two player mode. In two player mode, each
+  player acts until he has solved his current level.</li>
+<li><span class="keys"><kbd class="key-f4">F4</kbd></span>: lets you enter a level code, so you can (re)start from the
+  level you finished the last time.</li>
+<li><span class="keys"><kbd class="key-f6">F6</kbd></span>: <em>lets you choose between the english, german french or dutch
+  language (will be released in a later version...).</em></li>
+<li><span class="keys"><kbd class="key-f7">F7</kbd></span>: a short version of this instruction will then be displayed.
+  Any key swaps to the next page, <span class="keys"><kbd class="key-escape">Esc</kbd></span> brings you back to the main menu.</li>
+<li><span class="keys"><kbd class="key-f8">F8</kbd></span>: the top ten high score list will be displayed.</li>
+<li><span class="keys"><kbd class="key-f9">F9</kbd></span>: a selection of level is shown. <span class="keys"><kbd class="key-escape">Esc</kbd></span> brings you back
+  to the main menu.</li>
+<li><span class="keys"><kbd class="key-f10">F10</kbd></span>: quits BALLOONS.</li>
 </ul>
-
-when typing in level codes or high score entries, the following keys are useful:
+<p>When typing in level codes or high score entries, the following keys are useful:</p>
 <ul>
-<li>RETURN or ENTER to finish the input.</li>
-<li>ESC to cancel.</li>
-<li>BACKSPACE to delete the last character.</li>
+<li><span class="keys"><kbd class="key-enter">Enter</kbd></span> to finish the input.</li>
+<li><span class="keys"><kbd class="key-escape">Esc</kbd></span> to cancel.</li>
+<li><span class="keys"><kbd class="key-backspace">Backspace</kbd></span> to delete the last character.</li>
 </ul>
-
-<h4>4. starting to play</h4>
-
+<h3 id="4-starting-to-play">4. Starting to play</h3>
 <p>The game menu will be shown after the level number has been displayed.
 The content of the game menu (as shown from left to right):</p>
-
 <ul>
-<li><u>the inventory</u> contains everything you carry with you: your remaining number of lives and collected items like hammers, tiles, keys. Up to eight are visible. The item between the two marks on the left lies in your hand. You can act with it as desribed in the <a href="#II">items and elements</a> section. Using the <font face="Courier">CTRL</font> key lets you swap its position.</li>
-<li><u>Euros</u>: every pricked balloon and of course the coins make you earn money on the score. So maybe at the end of the game, you'll join the high score table. But when playing in two player mode, only the better one wins and will be asked to sign in!</li>
-<li><u>Items</u>: The number of coins left to be collected ist shown right here. If it reaches zero, the exit to the next level will appear.</li>
-<li><u>time</u>: this clock counts down in time limited level. When the time passes before the exit is reached, one life will be lost and the level restarts.</li>
+<li>the inventory contains everything you carry with you: your remaining number
+of lives and collected items like hammers, tiles, keys. Up to eight are visible.
+The item between the two marks on the left lies in your hand. You can act with
+it as desribed in the <a href="#II">items and elements</a> section. Using the
+<span class="keys"><kbd class="key-control">Ctrl</kbd></span> key lets you swap its position.</li>
+<li>Euros: every pricked balloon and of course the coins make you earn money on
+the score. So maybe at the end of the game, you'll join the high score table.
+But when playing in two player mode, only the better one wins and will be asked
+to sign in!</li>
+<li>Items: The number of coins left to be collected ist shown right here. If it
+reaches zero, the exit to the next level will appear.</li>
+<li>Time: this clock counts down in time limited level. When the time passes
+before the exit is reached, one life will be lost and the level restarts.</li>
 </ul>
-
-<h4>5. main keys when playing</h4>
-
-The actor can be moved in any direction using the cursor keys. Action like pricking balloons, hammering or placing tiles require the assistance of the <font face="Courier">SPACE</font> bar (Support for joysticks is planed...).
-
-
+<h3 id="5-main-keys-when-playing">5. Main keys when playing</h3>
+<p>The actor can be moved in any direction using the cursor keys. Actions like
+pricking balloons, hammering or placing tiles require the assistance of the
+<span class="keys"><kbd class="key-space">Space</kbd></span> bar (Support for joysticks is planned...).</p>
 <ul>
-<li><u>ESC</u>: cancel the actual game. Brings you back to the main menu.</li>
-<li><u>F2</u>: restart the actual level at the loss of one live. When getting stuck, this may be the right key to be pressed...</li>
-<li><u>Pause</u>:  the game will be paused and the screen will be hidden. Pressing any key will continue the game.</li>
-<li><u>CTRL</u>: swaps items in the inventory.</li>
+<li><span class="keys"><kbd class="key-escape">Esc</kbd></span>: cancel the actual game. Brings you back to the main menu.</li>
+<li><span class="keys"><kbd class="key-f2">F2</kbd></span>: restart the actual level at the loss of one live. When getting
+  stuck, this may be the right key to be pressed...</li>
+<li><span class="keys"><kbd class="key-media-pause">Pause</kbd></span>: the game will be paused and the screen will be hidden.
+  Pressing any key will continue the game.</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd></span>: swaps items in the inventory.</li>
 </ul>
-<a name="II"><hr noshade size="1"></a>
-<h3>II. items and elements</h3>
-
-<h4>1. this may be useful for you ...</h4>
-
-<img src="BALL.gif" width="32" height="32" border="0" alt="" align=left>
- balloons have to be pricked, then they will show coins or items hidden in them.<p>
-<img src="ITEM.gif" width="160" height="32" border="0" alt="" align=left>
- these euro coins have to be collected. When the item counter in the game menu comes to zero, the exit will appear on his position. Go and reach out for it!<p>
-<img src="HAMMER.gif" width="32" height="32" border="0" alt="" align=left>
- the hammer lets you destroy certain walls.<p>
-<img src="KEY.gif" width="32" height="32" border="0" alt="" align=left>
- keys can open stones with key holes. Each key can be used for one door only (f.e. the first that comes along).<p>
-<img src="FLIESE.gif" width="32" height="32" border="0" alt="" align=left>
- tiles can be placed over abysses. They will grow to a stable ground plate so you can walk over it.<p>
-<img src="PALETTE.gif" width="32" height="32" border="0" alt="" align=left>
- the stillage is not only movable, it can close abysses just like the tiles.<p>
-<img src="CLOCK.gif" width="32" height="32" border="0" alt="" align=left>
- in time limited level you'll get 15 seconds in reserve, otherwise 15 cents.<p>
-<img src="LIVE.gif" width="32" height="32" border="0" alt="" align=left>
- A new live extends the fun to play!<p>
-<img src="CODE.gif" width="32" height="32" border="0" alt="" align=left> this will show the code to the currently played level. Write it down, so you can restart this level when rejoining the game.<p>
-<a name="halts"><img src="HALT.gif" width="32" height="32" border="0" alt="" align=left></a>
- this looks like a bus stop?!?! Once you've reached this point and you loose a life (f.e. bij a lightning),
- this will be your new starting point.<p>
-<img src="BEAMER.gif" width="32" height="32" border="0" alt="" align=left>
- this beamer transports you to another place.<p>
-<img src="SWITCH.gif" width="32" height="32" border="0" alt="" align=left>
- switches may have different functions: some make stones vanish, some just swap stones. They even can run a<p>
-<img src="WERFER.gif" width="32" height="32" border="0" alt="" align=left>
- thrower. His balls can even destroy walls. To make them reach their goal, there are<p>
-<img src="UMLENKER.gif" width="32" height="32" border="0" alt="" align=left>
- shields. They can be turned to all directions and they can be movable, too!<p>
-<img src="BOMB.gif" width="32" height="32" border="0" alt="" align=left>
- The bomb: fire it and watch out! The floor might get fired and turn into an abyss and 
- surrounding destroyable walls will eventually open new ways.<p>
-<img src="SNOW.gif" width="32" height="32" border="0" alt="" align=left>
- the snowflake uses magic: It make money out of enemies!<p>
-<img src="LOCHST.gif" width="32" height="32" border="0" alt="" align=left>
- If you move this open stone on a blinking place, ways can be opened (or closed).</p>
-
-<h4>2. this might be bad for you ...</h4>
-<img src="BLITZ.gif" width="32" height="32" border="0" alt="" align=left>
- lightnings and their correspionding stone cost you a life when touching them.<p>
-<p> X X X Aliens are almost there where your way leads you to. Both of you will die when colliding.<p>
-<img src="RISS.gif" width="32" height="32" border="0" alt="" align=left>
- cracks in the floor can grow worse when remaining too long on them. At least they end up in an abyss!<p>
-
-<h4>3. this could be nasty ...</h4>
-<img src="PFEIL.gif" width="32" height="32" border="0" alt="" align=left>
-Arrows only allow movement in one direction.<p>
-<img src="EINBAHN.gif" width="32" height="32" border="0" alt="" align=left>
-Here, you are not allowed to walk through. But be careful, your enemies are!<p>
-
-sliding doors are almost nasty. They can squeeze you, when you miss the right moment to pass them!</p>
-
-<a name="III"><hr noshade size="1"></a>
-<h3>III. system requirements</h3>
+<hr>
+<h2 id="ii-items-and-elements">II. Items and elements</h2>
+<h3 id="1-this-may-be-useful-for-you">1. this may be useful for you ...</h3>
+<p><img alt="ball" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAICBAQCAAAMwAzADMAAEAAAEgAAAAzMzMAMzMzAFAAAFgAADMzM2AAADg4OAAAZgBmAGYAAGgAAEBAQHAAAAAzZgBmMzNmADMAZmYAM2YzAHgAAEhISDNmMzMzZmYzM4AAAIgAAJAAAABmZmYAZmZmAJAYAJgAAAAAmQCZAGYzZjNmZmZmM5kAAJgYAKAAAAAzmTMAmTOZAACZM5kAM5kzAKAYAKAgAKgAADOZMzMzmZkzM6ggAGhoWGZmZrAgAGhoaHBwWABmmQCZZpkAZmYAmWaZAJlmAHBwYLggAHhwYDOZZmaZMzNmmZkzZmYzmZlmM8AYAHBwcMAgAMggAIB4aAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzANAgANAoADMzzJmZADPMM5kAmQCZmcwzM9ggANgoAICAgJkzmZmZMzOZmeAgAABmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM+ggAIiIiJmZZmaZmZlmmfAgAJCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AAP8oADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzKCgoGYz/2b/MzP/ZjNm//8zZswAzADMzMzMAKioqGb/ZmZm/8wzzMzMMzPMzJmZzJkA/wCZ/wD/mf8AmZnMmcyZmZn/AJn/MzP/mTOZ/5kz//8zmbCwsMzMZmbMzMxmzGaZ/5n/Zplm/2b/mbi4uMjAoMyZzADM/8wA//8AzJnMzMzMmcz/AAD/zNDIoDPM/8wz/8z/MzP/zMDAwJn/mZmZ/2bM/2b/zMz/Zsxm/8jIyMzMzNDQ0Mz/mf8A/5n/zAD//5nM/8yZ/zP//9jY2Gb//8zM/8z/zODg4Jn//+jo6Mz///Dw8P//2P//8P///yH5BAAAAAAALAAAAAAgACAAAAj/AP8xY0atoMGDA5nlWggLFihQhgwFevNmyxYqEJj928ixo8eP/PTho8eOnbpx1Cpo/OhxhI8cOGCgQMHgH7+QI02eVMmSIwkSQYKUsVJliUwGFEKKJLmTWs8YVaIumdNmaJUpMi0kXcq0gtOPMayILQQIENWhVrBasBAAZ9evHs3InTSJrNmqRKd0WIszpwe4HHW4cUOX7j9A/s4S7bDXglt2fz8KLlyY7JyzIkQwZhCAa+SOgglT/lfIctURmhs0CBAA30gPKzkOpkzZdBAfmVWzXgrb42zadC3PCYpad+fXsTeaAV657BLiIh6sPk6vd8flzOsCKgpd+u7XueJm/y8tNciIEQ8eGPhePXxHK8zJF11CYsSB9Kype4DlsUrp2oUQlcJPJBxw3wH58cZfR1GV5mAhUaUwYIH3PYBgZwp+VEVZZUVVhYQIhHieCBce9xooLE01h4cDhojAefYJkKBr1YHCzz9TWPFPP/0EQR+BJIRY33kHCCAjhiNVZ4g+/HQwRRVW9ONNEED+BKN9Axypj0hJemAIPkw2MEUOVlTjzQAUpAmjgQNkuRuX9JDkQSD0gKlPAx3gMEA1baZn4AFtGvkmnHK+EaedqjVwRZuMBiqoUoSW5MEb7BwKpmpMtMWPkYK2tSWXSZakjgdbqFOSpfpkqulNkG7pWqiiVlqwxTjqmGrpEEoM+umrSZIkqjoVUEENraZWGucPQ7DG66txxlmSTuMES9A4xJ5Kzw+sNauts7+eFK0QAw1LbLHWbvtst9RGC8G6FbTrrgfwxivvvB646+4WAQEAOw=="> balloons have to be pricked, then they will show coins or
+items hidden in them.</p>
+<p><img alt="item" src="data:image/gif;base64,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"> these euro coins have to be collected. When the item counter
+in the game menu comes to zero, the exit will appear on his position.
+Go and reach out for it!</p>
+<p><img alt="hammer" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAICBAQCBAQEAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OGAYAGAgAAAAZgBmAGYAAEBAMGggAEBAQEhAOAAzZgBmMzNmADMAZmYAM2YzAHAgAEhISDNmMzMzZmYzMwBmZmYAZmZmAIBAGIhAGAAAmQCZAGYzZjNmZmZmM5kAAIBQKGBgUJBAGAAzmTMAmTOZAACZM5kAM5kzAJBIGIhYKGhoUDOZMzMzmZkzM5hIGJBYKHBoWGZmZqBIGJBgKGhoaKBQGABmmQCZZpkAZmYAmWaZAJlmAJhgKHhwWKhQIDOZZmaZMzNmmZkzZmYzmZlmM3h4WHBwcKBoMIB4YAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmbCAOABmzADMZswAZmbMAGYAzMxmALiAOGbMM2YzzDPMZswzZjNmzMxmM4iIiJiQcJmZZmaZmZlmmcCIOJiYeJCQkGbMZmZmzMxmZqCYeMiQQMwAmZkAzACZzJnMAAAA/wDMmQD/AMyZAKCggDP/ADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZM5iYmKiggDP/MzMz/5mZmdCYQKigiKiogGaZzGYA/5nMZplmzAD/ZgBm/8xmmWbMmWb/AMyZZtigQKCgoLCoiDNm/2Yz/2b/MzP/ZuCgQMwAzADMzMzMAKioqLiwkDPMzGb/ZmZm/8wzzMzMM5kA/wCZ/wD/mZnMmcyZmZn/AJmZzDP/mTOZ/5kz/5n/M7CwsGbMzMxmzMzMZsC4mGaZ/5n/Zplm/2b/mbi4uMjAoAD/zMyZzADM/8wA/5nMzMzMmcz/ADP/zDPM/8wz/8z/M8DAwJmZ/5n/mcxm/2bM/2b/zMz/ZsjIyMzMzODYsNDQ0Jn/zAD//5nM/8yZ/8z/meDgsDP//9jY2Gb///DouMzM//DwuODg4Jn////wwOjo6P//wP//yPDw8P//2P///yH5BAAAAAAALAAAAAAgACAAAAj/ABkIpECwYIeDCBMq7FCwYJZ/ypRNm0ixYkRluDK6crVpkyBBe9KkyZJlCgNl/1KqXMmyZT999+SpU3cO3DQKKFvq1NnvZUyaNXHuHMryJUyZQafppKfSHz0OPHhMyEeNmkqf8pBSUMrSHqeUBPw5DcQnHb9XoSA5+9fzKM2tLfNxmjsXkj1DgeDlevWqhYQAbGH+7MB15T5RVRJX4ZTPkCFnuXJVkCBBAFus6gi33FclpWIpUpT04NPjxo0BAyxjlaeZZWKwBGITMIS6NmrVglnnJAp2QEvUgY922M2bgO/fl4UT37mkuZAfHHhiHc77HxVarZ5zOL6ybcwOuKpT/cn+Azr3q9PD8x5ffsd2l9NdVY8Cqv37ovqEy+edBNSO//d1l993+xHV33/unZfcPd9tUh0Qh/xXwwQKGsUga5v0wxsPgNRQgwsUdmdhVh0Ioo+GQ9kAiAsshphSW7mxJsg9J6LYkg10lKCjizBeKFMHe8hDY40tsZCjjg74BmOMmaWR1ZA92fgPC22QQIIDSS7p40wdpKHOk1BG2c+VDjRgpgD5CRaTTDR1kMU5M4GZZo0B1GnngFvOdA4FWYBzDpxgMjjnnAz6yCZQFEwxjZ9wfhlooZCumdVMQIGTqETgMBpnVpx22imlf9ZkaRARLcpoo5t6Sqmef2ZqaUAAOw=="> the hammer lets you destroy certain walls.</p>
+<p><img alt="key" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAICBAQCAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzM1hYSABmZmYAZmZmAGBYSAAAmQCZAGYzZjNmZmZmM5kAAGBgSGBgUAAzmTMAmTOZAACZM5kAM5kzAGhgUGhoUDOZMzMzmZkzM3BoWGZmZmhoaHBwWABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eICAaDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzAIiAaDMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJCQeJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AAKCYgKCggDOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zM6ioiAD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoLCoiGb/MzP/ZjNm//8zZmYz//9mM7CwiMzMAMwAzADMzKioqLiwkMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzMDAmJn/Zplm//9mmWb/mWaZ/8jAmLi4uMjAoMjImNDImMz/AAD/zMyZzADM/8wA//8AzJnMzMzMmcwz/8z/MzP/zP8zzDPM/8DAwJmZ/5n/mcxm/2bM//9mzGb/zMz/ZtjQqMjIyMzMzODYsNDQ0Jn/zAD//5nM/8yZ/8z/mf8A//8z/zP//+jgsNjY2Gb///9m/+jouPDouMzM/8z/zODg4Jn////wwOjo6P//yMz///Dw8P//0P//6P///yH5BAAAAAAALAAAAAAgACAAAAj/AP/16oWsoMGDA3uZWqhJEyJEbdqgwYLFiBEhC3r928ixo8eP/PLZe1eunLhsyB5o/MiSJb+QI02eVNmypseQIknORGaz50aY73Q+4OnT5sucJocW7QkzpgWiS1sedQo1qsuc755ardk068qtIPPltPAVbMepXrf663fq1KYoP4GStdovmDty4d4e+YfWgimrx9z1GzBgU6MjA/r+XXpM3mDCAxrtORJAriaOa4MdO6ZM2bLOm+c9HsAxmYcAAcZe3uiCHDl38ubJnu24BuGOplGr5rgpnL5+wIMHryHjNsdgpwPYG2kBEcdG+Fy4kCGjhnXr1F0Y34gc9fKsiPht1NyTDLJ5yKdciCLNXY8G70EttMknXk/58+elN9qYTE9y5fG1YQ99aZBTggk1tdCCCckks4cH76EWVDkWoPHOgGmcooEH7LFkggkleAAhagCSZAEWQQ1IogAC1DQAiyRKSBKFWJSToj0xvqTjjvzEKGNJ4lhghDgl3SiWWDweKdZyI82YlBHZiEPkjcspqSSTTTop5QNCIBMlkTZSiSWWQU0I5ExCEJTNl0WW6eabWkq55gM0DOTll2C2+WZJfEp50pwLBPrAoIRaYOihiCZqAaGEGhEQADs="> keys can open stones with key holes. Each key can be used for
+one door only (f.e. the first that comes along).</p>
+<p><img alt="fliese" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAADA4SEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzM0BIYABmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzAEBYeDOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmUhwuABmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AFvBG0iwoMGD79adAzdtWrRjtxoIPEiR4ruECx0+lFixo8GEChluvOWx5ECM4EQ2IGnS48WQDle2LIkxIwWWMyu+tImzoBQpKIIKHRoUA4aTIcHdpPiTqFMURpGeW0hhosGiRrNqNcqAAdKQVSli3bq160mUYQ+OJZvVLLydSq0WXMsWg1u4FC6JhVq3rde3aPWq5dvX7l+8jfYW5np4HdjEgxcb/koV8lXCfc3upMpH8WLNjqcq5fMu8mcGL5NSGLOu9FzMdbuCFK10zLnWruEx7sq7N+/QCxlS+ALuNm7dhn0rZwA85TQKTlIav5jbYmqFwRtCnyZ9OvXv3x1jgM/ukIKPaA27i8dNff145w2jNfBxLBr67lPdi59Km2F8+TrcUh963OHH34HBwafRMQ3o0IqAA6aX0oQUUtiQRg8x2EIrDx4zIIESVnjhfxkyiMCJDaSoIgUstujiixSoqKIP8HB4y4045shhK5f02EgjfPAxxhhfOOGEDz7ogEBAADs="> tiles can be placed over abysses. They will grow to a
+stable ground plate so you can walk over it.</p>
+<p><img alt="palette" src="data:image/gif;base64,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"> the stillage is not only movable, it can close abysses
+just like the tiles.</p>
+<p><img alt="clock" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAQCBAQEAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzADOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmAJBoMJhoMDOZZmaZMzNmmZkzZmYzmZlmM3BwcJhwOAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmALiAQGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmcCIQJCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zM+CYAAD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM+igAPCgAMzMAMwAzADMzKioqPCoAMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ/5kz//8zmZn/MzP/mTOZ/7CwsP+oAMzMZmbMzMxmzP+wAGb/mWaZ/5n/Zplm//+4ALi4uP/AAP/IAP8AzJnMzMzMmcz/AAD/zMyZzADM/8wA///QADP/zP8zzDPM/8wz/8z/M8DAwP/YAJn/mZmZ/9DQqP/gAGbM/2b/zMz/Zsxm///oAMjIyNjQsNjYsMzMzODYsNDQ0JnM/8yZ/8z/mf8A/5n/zAD//+DYuP8z/zP//+DguOjguNjY2Gb//+jouPDouMz/zMzM//DowODg4PDwwJn////wwOjo6P//yMz///Dw8P//0P//2P//4P//6P//8P///yH5BAAAAAAALAAAAAAgACAAAAj/AP/NmuWroMGDA2d5WihJEiBAZ86IiRIlSBAeC2b928ixo8eP+ezJW/ftm7Znvh5o/MiSZb6QI02eVNmypseQIknO9GVzI7RkyYAB+9WrI8x1Oh/wrEmNGrSnQYf2woXr38ucJpW2zMa16cYtAvrxI4qL1ieYMS0s9ciVa0czYcXum0pL09Fvaj+2/QjXn1h++/SVzZRzXd6O1Ny29Nvv3rx26cxmkjfSwkqOiW3603fvXr146rzRyhSg8uV/0DK33BeYswABoeuSNnw6dU3ArV/DTsft02zLHJPZ5jhgwEbcgXXHg+zNd6EAFjxxBJbMY3HjuPXp/twu9LZMz6NP/0/mz/oAAaz36fa8PJ23bZpIW5DE8RewLVvMdNRtBqyAzp+p00MNNMQHHX0b2aebP+X9o54A+P3nWYACBBBAJvIh+E8vv/DTTz8MbqaPdq91xp47oXHznXyAcIRLL/x4+GE/I45oomfzgObeNtOABx0g+bjYyz4xfnijifVwp445KsYX3hn2BPkPVazFeGSS9eTY3Y49kgbdGfJEmc8nVOnD2jxYJpkjiuq416SPeImxTphRfkILLiO24048fMbjTndLeqNilxbiFQVSdGZiJ57pqOPoo2168x6PGD5XkgVRfINomJloYic3kkpaQwCSqkipjwGYZEEQ2pS0aSGd2mm5zayjzspjfKiWpM0DQTyjTauvYtjpNNPQEACxwuYq0wM8+OJrq5oiWgisyQo7baG6zsQDQc886ypS60wrrrjYynTSMw+0MJCzz0LrqoXwwluSud2iu8C9D+SrrwX89uvvvxboq28QAQEAOw=="> in time limited level you'll get 15 seconds in reserve,
+otherwise 15 cents.</p>
+<p><img alt="live" src="data:image/gif;base64,R0lGODlhIAAgAPcAAP///4AgQAAAAAAAAAAAAEBgwP8gAIBAIOD/AP///wAAAP/w2lm1+G6qAP/HQwAAAAAAAHAgQG9vnwAAAAAAADBQsOAgAHtSMcDgAODg4NDQ0O/fv1Sq2WSgAPe/PwAAAKqVAGAgQFBQegAAAAAAACBAoMAgAKmARaDAAMDAwLCwsODKpU9wulqWAO+3OwAAAGUAAFAgQI+fugAAAAAAABAwkLAgAJB5YoCgAKCgoJCQkNC6j0plnlCMAOOrNwAAAABAH0AgQAAAAAAAAO/KhQAggKAgAEBAIGCAAICAgAAAAMClekVaf0aCANujMwAAAAAAAAAAAAAAAAAAALWAUAAQcIAAAGAgAEBgAGBgYAAAALWQZUBPYDx4ANObLwAAAAD/AAAAAAAAAAAAAHBPLwAAYGAAAAAAACBAAEBAQAAAAKWAVTA6SjJuAMuUKwAAAAAAAAAAAAAAAAAAAEowHwAAUEAAAAAAAAAAACAgIAAAAJpwRR8lMChkAMePKwAAAAAAAEAAAgAAAAAAAAAAACAwYH8QAAAAAKDAAn9/fwICAn94bQAAAjdVAIBsIiAAAgAAAEoVAAAAAAAAAAAAABgoWHAQAAAAAICgAnBwcAAAAHdvXwAAADJQAHxoIAAAAAAAAAAAAAAAAAAAAAAAABAgUGAQAAAAAGCAAmBgXgAAAHBlUic4XS1LAHhkHgAAAO/VwAAAAAAAAAAAACoaIAgYSFgQAAAAAEBgAlBQUAAAAGhdRyUyTyhGAHJeHAAAAKqQgAAAAAAAAAAAAHdlQgAQQFAQAAAAAAAAAEBAPgAAAGBSPSMtQCNBAG5aGgAAAGVVSgAAAAAAAAAAAFpAKAAIOEACAgAAAAAAADAwMAAAAFpIMiAoMB48AGpWGAAAAAAAAAAAAAAAAAAAADgnFwAAMDAAAAAAAAAAACAgHgAAAFJAKhgdJRk3AGZSFgAAAAAAAAAAAAAAAAAAACUYDwAAKCAAAgAAAAAAABAQEAAAAE04Ig8SGBQyAGRQFgAAACH5BAAAAAAALAAAAAAgACAAAAjRAAEIHEiwoMGDCBMqXMiwocOHECNKnAgxgcWLFtOkoSgQI0aNFC1mGEmyJMiIIkuqPOkwJQQIKFCMzJFjZJIkL1smGPky5syaGW7mTGilqBUTJkbG9Bk0Cc2bLA8aPZo0w1KZTZ8miWqwKNKvVUveHLs1zdCuVMGqbEpW49mCU5EqXWrTaQ6oZiEgjFv1al2tbvUu1MgTJlbAed8iJJyh5+G7ZV8qTsg4heXLGgNDrHzZcua8Ej9/liw5tOjApCmSTs1R4OrSrWPLnk27tm3ZAQEAOw=="> A new live extends the fun to play!</p>
+<p><img alt="code" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAICBAQCBAQEAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAEhAgAAzmTMAmTOZAACZM5kAM5kzAFBAgDOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mfDwyOjo6P//yMz////M////zPDw8P//0P//2P//4P//6P//8P///////wAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/ABkIhECw4IWDCBMqvFCwYJB8r17lmkixYsRXmTI+euTHT5kyYaJECRKkBwMA+VKqXMmy5Tx36cRVqzYtWS4Ir1C23OnyZUyaNSGg1MmzaL6XMGUGzTVU5YCnUKNGFRCgalKlQvM1zTegJT589+7Zq1eP3rt2AXxiZaq1LYGdX8OOLfuuaoB0Py80Hfr2bb6+XKHaG0CPnt2k1S6w3Vs0rr2x9KgGuKq3LV+iLOOKLSsZZswLOS1b9vuXgNS5A6i6S1p5LwG+XuWOTZ2WdWjGW1c6nk1VbevRuXXLrve09udMuLW+7vsUn+DZA4yL+z10QPCUmh8Tj+77UfLgmjcT9VfNGrd1fES/ZkdN/rN30QDQn29+b4BY7eMn451uHsA9/2CFFZZUT6m23wV+4GaPf/4JKNYAK0RIAm36icOfO3tZp+EAgz02mISpSbbfdGUAgOE8Q9UDgIoeokbChBTeZWFiAIhjIgAoCgAAPSuS5SNxEwogWVUxyXRBFDXeiOI7O+5Y2JMFDimjTDRWk2Q6AASQJQBCQiWkkHYROSNNFwQBgJU2YomhlmG2aVeRM9EkVDIATHMlAFi66aaFVAIFQQ8A0Gknmnjiidehh/LZ5zRBAZCToGcmqeikfMbJaE3JQACDo4HW6amV1VDa50yXJmMqBAEBADs="> this will show the code to the currently played level.
+Write it down, so you can restart this level when rejoining the game.</p>
+<p><img alt="halt" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAABgYGAAAMwAzADMAACAgIAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAFhYWAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzAKAgAGBgYDOZMzMzmZkzM6ggAGZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcMAgAMggAAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM9ggAICAgJkzmZmZMzOZmeAgAABmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AAP8gADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AO/RouWroMGDA2l5WkiJ0qBBadKUoUJlyJAeCmjd28ixo8eP9uS5O6dNGzZnvhxo/MiSpb2QI02eVNmypseQIknO9GWz50aY53Q64OnT5sucJod6lMe0qUh3I0nKdIaSw1OSFYhylPewa9eIEcuIpciBA1BtWZcO6sG2bVsYcGGoUOGgQACg59J25Oq2b1y5dO3CHFlh5da1fd/GnVv3LlPChjfy7WunsmXAjY9C9ugOMVsslXvErcxYMNDCnD33CC36b+m7pz1xTtOW9V+4rzXnld3xHO3PWG7jzn2akkffcadMEQ6YbgDHOSsY76itTNwfP4TPZfwcJ+HpHKv/4fXhw/V2546h5h3kEZv1uC7iN0+RYq6C548JD7LXERuV83PFFx99c3FwXwCPBVVBGvLwt5Ez/wEooQplHXhVXmm40yB/vkQ44XZlGficeliVcY6GDfoyhAIOtOhiiwrEKOOBJKJFRVAo0sLBczz26GOPUZVUARXa4OhOWT8m6WNQJWFTwRDYlGSkUy9V6dRTQTbpwBDOYBOlkVBd2RRUJEolkwM9+NJllEWCSeabUTHZ5Ew9EESVl1IGpeeee5Yk00nOOADDQGquyWaefPo5J6CByvhiixVEKumklFbw6JYBAQA7"> this looks like a bus stop?!?! Once you've reached this point
+and you loose a life (f.e. bij a lightning), this will be your new starting
+point.</p>
+<p><img alt="beamer" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAABAQEAAAMwAzADMAACAgIAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzADOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6P/w2Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AN+tWlWroMGDA1dVWrhokR49YcJ0adKkR48cCla928ixo8eP7tKV8xYt2rNitRxo/NixgMuXLje6CznS5EmVLN+9dMCzJ8+XIUWSvFmLZYGeAZIqTcqzSTGa3oY6KOrx6NKrV51CNTm1qoOr6sKKzVpMZM0KVDdaVRo2jdu3YZc6FRoNLce1SdW93QtXbrGR3uzq/Mp2r1i9fZU6HVlhJV7EaeKyhaxO8d/AjglTxpo38WLMgwtHXiq58+ikTkGv3RxAsmvPxQJXCt3abeW8pEXfTl1h9mrbuMGa3h27wiLaiG/fzl37NO/jv0+3Zt6ceGDomhO7Vg47sB7a1UkvtA+Purged8gTY2WdOnCYdO4ewx3fFnj5qBXClEtXoAlpw2IZ5hdJFXThzX7F+CcaX+oF0F5dTUSFoIJ5QTbfgCRBGI2E5SQI1mHjORhbhs9U0MMzJUnoIWdYPVjSMw70UMwzKKpIEYVZUTRiSTY5kEMtM6K4oTfFFHnjkU4VGRWPNBbjI0FF0phiVEVWWWVUGdp0kpMsDARkkEJOieWSPGpZpQMKpOkTTxW06eabcFawZowBAQA7"> this beamer transports you to another place.</p>
+<p><img alt="switch" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAQEAAAMwAzADMAAAAzMzMAMzMzADAwMDMzMzg4OAAAZgBmAGYAAABoCEBAQABwCAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzM1BQUABmZmYAZmZmAFhYWAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzAGBgYDOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AOkJHEiw4MB579aRu1Zt2a5YmyIBAvTDoMWDCRUydAgxksQhCy4WnIdQ4cKGHCNOnAIh5EGSMN9lJLdw466HESWeGQOh58FNQIPmlAjozM4xU6YMGfLjh4whGHpC+CmgqtWrWK8G2LoMQ9SpAudtErC07NKmTWWobdEChFsOP6p59Rl2rNkhIumxfRvXa1Sqd+nRvMYQpYC9bvvOBWxWcCTCRc/IONw2cTUOiwW+s9uYnEQAAIxORgzixzXMXge+i0S28zUA9EBLpuy29Gm/A9exNlvxGiDQoAWMrmwbNYawugWgbUrP928AVVvQTnw7Nb155AApX04PULWiVWVI/ydt2rjm7NvRdq/W0OiY8bVLX8Y9b921M+mZs1/m/v3h2nDNl9o7C+Gn1oH0LMPfMmPs4l98ARpXHznVjCHcgTLQcwaDEUQwxoMAKuZVQtcweCGCDkZAzwMPTCEdgAH6hYFC1ewyBWVstUCPgyyyKAAIP4LAwZA/dDXXQg7dmCNb9MSSlI8/BjkkBzIYGdVGsQzx45JNTuFkVW4FIOSUVfoFQUO7bKJlfCDQswmbYU45pAy7zAUBR5H8IGZ89GC11VZyYkCnnTjlGcCQcL4l55RetVCnVB0BIkMAy1VqKYZsxSIVBCqdMcQy7LFH2Kih7qfgTQ9pKpVHgIwhIwaLBin6qp0LSLVST7PmmuumtS4AyBCbQqCrrsH2tMACPxxbrLDDLmvsAgkEBAA7"> switches may have different functions: some make stones
+vanish, some just swap stones. They even can run a</p>
+<p><img alt="werfer" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAQEAAAMwAzADMAAEAgAAAzMzMAMzMzAEggADMzM1AoAFgoADg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzM1BQUHBQIABmZmYAZmZmAHBYKFhYWAAAmQCZAGYzZjNmZmZmM5kAAHhgKAAzmTMAmTOZAACZM5kAM5kzAGBgYDOZMzMzmZkzM7AAAGZmZohoMGhoaABmmQCZZpkAZmYAmWaZAJlmAJBoMDOZZmaZMzNmmZkzZmYzmZlmM8AAAHBwcJh4MMgAAAAAzADMAMwAAKB4OHh4eNAAADPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzAMhIANgAADMzzJmZADPMM5kAmQCZmcwzM6iAOICAgJkzmZmZMzOZmdBQAOAAAABmzADMZswAZmbMAGYAzMxmANhQAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmehYAJCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zM/9gAAD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAP9oAKCgoMjAAP9wAGb/MzP/ZjNm//8zZmYz//9mM/94AP+AAMzMAMwAzADMzP+IAKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ/9jQAJkz//8zmZn/MzP/mTOZ/7CwsMzMZmbMzMxmzGb/mWaZ/5n/Zplm//9mmejYALi4uJnMzMzMmcz/AAD/zMyZzADM/8wA//8AzP8zzDPM/8wz/8z/MzP/zMDAwJmZ/5n/mWb/zMz/Zsxm/2bM///oAMjIyMzMzNDQ0MyZ/5n/zP//AJnM//8A/8z/mQD//zP///8z/9jY2Gb//8zM/8z/zODg4Jn//+jo6Mz///Dw8P///yH5BAAAAAAALAAAAAAgACAAAAj/AP8p+0ewoMGDB/3x02dPnThqyo44GGhPn0WL9jKyY6fO4UNlymqZMjVJj546Ypw4CSDhn71/Fy9mtLexo7iPIUmWrIOSZQCY+moJHSpy5KSjJnmKSenkyBEcOGJIkPDTolABAoiO1JkUJdMjAQJEnVo1qIB/WIduPVrypNeV/sLiyEAVaC2saYWuRep26cqwYumWvZpVrVG+SpnKnZvhZ0WiWg+35fm26dMMjV3ag6x37+TEKp0ydmzPlFBatGCpXv3q1T/XqP6Vkv0Pk788+tywy/KPXWlTsN4JH0783zvjyI+n8zdNHzF2p3qzGxmcuPXk2Jc3fx5dHbtJ1Ver/27d+l/s2LMx1b6dm52Zfx0nvRLOmnz587TV28btxt57cerI9459BOI3W3rr8efePzfpYR8AEEYIoTgAUAOAMgDUcoYpWkyShB5G1FHDP9SIowcqYbwi4YoWWoihhqY84SGIIgpETR2oNIHKihK6eGGGWsQ4Yw01gsRTA00kqWSSSCBRBxJi/BClEzccoYKVOIgQgwf/1KLMUg2EKeaYDcRQJgMjoMlABwqwmYEBb/5j2lJikElmDGqmOUKbfL75pj8jqbQUXoQWKgBgiCbKz1EqNUrno4026tRTUEUlmD56TOJUWJF2KumkUIUVQwyC2WMSWHEF4Glok4qGQwD2iFZKljo8vQpYq7i2WimiUlEljhh1hCpWrrpWClUMoo5AFjVOiDGqsdBGe+yoo46gLFXKrDQVZtx26+23U4UrF0vhSvDtudyWSxZLDjiQ6LvwxhuWBE4EBAA7"> thrower. His balls can even destroy walls. To make them
+reach their goal, there are</p>
+<p><img alt="umlenker" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAQEAAAMwAzADMAAAAzMzMAMzMzADMzM0BAIDg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAFhYWAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzAGBgYDOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmQAA8JCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAACg4KCgoGb/MzP/ZjNm//8zZmYz//9mMwCo6MzMAMwAzADMzKioqACo8MwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAACw8P8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzACw/5n/Zplm//9mmWb/mWaZ//+ZZgC4/7i4uADA/1jA8ADI/wD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwGDA//+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZmjQ/8jIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAACH5BAAAAAAALAAAAAAgACAAAAj/APvN6kewoMGDB/nho9fOm7Rfs3gsGNiOnkWL7TKCA+fN4cNZszZBguSnTBkwUIAACfCgX7t+Fy9mbLexo7SPIUmWBIOSZQCY9DYJHSpypJ+jJnlCSQmEB48XL1Q8ePDTolABAoiO1JkUJVMeAQJEnVo1qIB+WIduPVryJJhZKQPwC/vCAlWgm7CmFboW6clft9qsDCvWbtmrWdUa9Sst2C1WgunWtfCzIlGti0tKm+br1i1Ogp1OrtzuMt++frwB4+yZ06U2oi1QdtkO0uWti71lAwas8+dLj8g8lf0TXG3cyI+C6yaMt2/XbQIMn70ReXJwwnb3fh499mxv4PxY/9e5XFjz7Z7bCGg6/WdHtvCVMzfpvLN6ld5/SvMWn235MtKU8YIv9q2HX3v93GRSfN4wJ4xJUBGo3lf59fNLgCZl6I15vAEToS8TqsQegrP8wlOG0nTYIYEgCrCUiKKNJtAsPPGU4oostvjigU/JuAlcUIDxS445BuYiUzxCRVw/ti01i2dQRjkhkiNCNRo/I6kExSasRJmeiyImCZUKxOFzVJibcKKmmveFWaWVZFJFTxl+OBUWEJBcomebMDrVY1gqxBlAOyaBNVcAeD4SXZ9+/tkOoGR5w9MLhEnHAxmWNuqnlZVKRZU0QUJFl6aaWgknoB2Q9QsQUARq6quwji4ZaKAdpErVLCtNJduuvPbq61TAhqUAS8A+4OuxuxZLFksKDFvps9BG++wDQAQEADs="> shields. They can be turned to all directions and
+they can be movable, too!</p>
+<p><img alt="bomb" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAABAQEAAAMwAzADMAAAAzMzMAMzMzAEgQADMzMzg4OGAgAAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmAFhYWAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzADOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AFu1ukWwoEGBrS4pbNSID58xY748efLjxw4F8DJq3MixI7x3686BmzYt2rFbD1p5XNnxHUiRJU2mZElTI8iQI2WqrFnzJbicD27x7OmzZNChGhd4fAnTglCk8BAsLeoUqtKVPsFVRXp1aUiRW3l29YrTwk6WAdKqDTC17Fm08H6sbenTLE+2ctO2Bfu249q/dMteQov3r96NLgXDzWuYrc11ZRutTNuosVrEkMFK9mjZcMbE5zRP7jz3Y2awfN5xJn05MU6tfNap5ki6g1rXoX9aGHNO9myNljvYTnsz98jd4Hr7Bm5Y+G3IX39Os/Dlp3KXs1lDN07SwpNp1q9jZX9n+bTIkSW9RyMZHrrvv9u5k4z24MexaOvDh3bvPrRx9DHVd8t964Gnn38InifdfDLtMNAxBLL304QUUkhSTCYd84CDDxJYoIQVXshghhq6oIACD6SoogUstujiixaoqOIPCgQEADs="> The bomb: fire it and watch out! The floor might get fired
+and turn into an abyss and surrounding destroyable walls will eventually open
+new ways.</p>
+<p><img alt="snow" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAAAMwAzADMAAAAzMzMAMzMzADAwMDMzMzg4OAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzM1BQUABmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzADOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3iYAHBwcAAAzADMAMwAAICgAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzAICoAIioADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmQBmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zM7DQAAD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoLDYAGb/MzP/ZjNm//8zZmYz//9mM7jYAMzMAMwAzADMzLjgAKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAMDoAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzMjoAMjwAJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MAND/ADP/zP8zzDPM/8wz/8z/M//MM8DAwNj/AP+ZmZn/mZmZ/+D/AMz/Zsxm/2bM//9mzGb/zP/MZuj/AMjIyPD/AMzMzNDQ0Jn/zP//AJnM//8A//+ZzMz/mQD//8yZ///MmTP///8z////M9jY2Gb///9m////Zv/MzMz/zMzM/+Dg4P+Z/5n/////mejo6P/M/8z/////zPDw8P///////yH5BAAAAAAALAAAAAAgACAAAAj/AP0JHEiw4MB++eq5C+ctGjBanSD58aPDoMWDCRUydAgRksQfCS4W7IdQ4cKGHCNOjNIg5EGSMPNldLdwI7CHESWWCdOg50FvQIFGG3rzIUSVfsrsjBLlB4WeDX4GRUnUaKecSXeGaUrhaVSB/aY2HDfOoVWyEpOG2Rqlq0+wYqORNUurLtqJStl2fSo1qNxxGDAYpUX2ada1bd0eHMr4b+DBhRsc3opBscB8Q8mSvUr2YbduSSMNUpJEa5TKXQdi/ru5U2dan0OPLo0YNYWB9YAxDkz2x49v33To4IRpJ9QElPeCzV2U9zjf37oJJ268J/LTyv31c1e0OzDgrVpx/+KktOdk7Kn95XNXt3376OHHl5ecN3nqfvXCubc7Trg1azqwIBpe9aF323rhXNVJe2T5Zw0LLAwyCIGIGYifO95wptlE/ykl2lpK+CBihXtRkFA40Xik2ThKSSONUhKulYSIOZC4l0LeAOOHR5B05eJ8E5HGVAJEJsDUXg0s5NBEE/WkjDJrmeeHiE0VaaRTbm1Ei1JM+pFLLlIqJSKRFfqGZEPAdKLUmmXggktPbPqQA5lMNYVlTxxBslYYbJYBZ31hEFmnb3c2gBMkUeypKJmKBmqknT/o4FUDHflRZ6KN7nkppJHqAFUDKpXh26akXkpop55C5ZEfYZRIQWCwxibqKpItQbVST7PmmuunCbTkxw+fNqCrrsFal4AORBYr7LDKGntAQAA7"> the snowflake uses magic: It make money out of enemies!</p>
+<p><img alt="lochst" src="data:image/gif;base64,R0lGODlhIAAgAPcAAP///4AgQAAAAAAAAAAAAEBgwP8gAIBAIOD/AP///wAAAP/w2lm1+G6qAP/HQwAAAAAAAHAgQG9vnwAAAAAAADBQsOAgAHtSMcDgAODg4NDQ0O/fv1Sq2WSgAPe/PwAAAKqVAGAgQFBQegAAAAAAACBAoMAgAKmARaDAAMDAwLCwsODKpU9wulqWAO+3OwAAAGUAAFAgQI+fugAAAAAAABAwkLAgAJB5YoCgAKCgoJCQkNC6j0plnlCMAOOrNwAAAABAH0AgQAAAAAAAAO/KhQAggKAgAEBAIGCAAICAgAAAAMClekVaf0aCANujMwAAAAAAAAAAAAAAAAAAALWAUAAQcIAAAGAgAEBgAGBgYAAAALWQZUBPYDx4ANObLwAAAAD/AAAAAAAAAAAAAHBPLwAAYGAAAAAAACBAAEBAQAAAAKWAVTA6SjJuAMuUKwAAAAAAAAAAAAAAAAAAAEowHwAAUEAAAAAAAAAAACAgIAAAAJpwRR8lMChkAMePKwAAAAAAAEAAAgAAAAAAAAAAACAwYH8QAAAAAKDAAn9/fwICAn94bQAAAjdVAIBsIiAAAgAAAEoVAAAAAAAAAAAAABgoWHAQAAAAAICgAnBwcAAAAHdvXwAAADJQAHxoIAAAAAAAAAAAAAAAAAAAAAAAABAgUGAQAAAAAGCAAmBgXgAAAHBlUic4XS1LAHhkHgAAAO/VwAAAAAAAAAAAACoaIAgYSFgQAAAAAEBgAlBQUAAAAGhdRyUyTyhGAHJeHAAAAKqQgAAAAAAAAAAAAHdlQgAQQFAQAAAAAAAAAEBAPgAAAGBSPSMtQCNBAG5aGgAAAGVVSgAAAAAAAAAAAFpAKAAIOEACAgAAAAAAADAwMAAAAFpIMiAoMB48AGpWGAAAAAAAAAAAAAAAAAAAADgnFwAAMDAAAAAAAAAAACAgHgAAAFJAKhgdJRk3AGZSFgAAAAAAAAAAAAAAAAAAACUYDwAAKCAAAgAAAAAAABAQEAAAAE04Ig8SGBQyAGRQFgAAACH5BAAAAAAALAAAAAAgACAAAAj/ABMk0ECwoMGDCBOqUCEwocOHBhcSTEGxosWLGC8uzJRpYsaPIFNs7KiBosAMGXKoXMmyZY6TGZIk4egRpsubK2HKpFkyBUqZOHH+lDmTJMWhQW8O3Wk0hUsdOjgSLQrVJVOPT6NmmsqxasurPVlCzZIFgNmzZmUuZAmWolgdZNGiVauCbVGsKznK3QvA7cq2TvNm4ivXr0rAdgmjNZwD8d8kis8ydnwYcmQAKO3ynGw5cubHmwOr1HuZc2iWpCObbvpWJmGKa0GzXgnVNV/YdWXjZbnQIkrcVu+Gbdm74m+RuTU3tZm0pU7hJhN8bp5TekzoPq9TZ7kUO9LtKrvzIVw4tbz58zLJjleBvv159ZlGcpxPv759+2Tl39/PPxPZgAA7"> If you move this open stone on a blinking place, ways can
+be opened (or closed).</p>
+<h3 id="2-this-might-be-bad-for-you">2. This might be bad for you ...</h3>
+<p><img alt="blitz" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAgICBAQCCAYGAAAMwAzADMAACAgGAAzMzMAMzMzADMzMzg4OAAAZgBmAGYAAAAgaEBAQAAzZgBmMzNmADMAZmYAM2YzAAAgcAAgeEhISDNmMzMzZmYzMwAoeAAogABmZmYAZmZmAAAAmQCZAGYzZjNmZmZmM5kAACBAiAAzmTMAmTOZAACZM5kAM5kzACBIkDOZMzMzmZkzMyhImGZmZmhoaChQoABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcHh4YAAAzADMAMwAAHh4eICAaDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzAEhoqIiAaDMzzJmZADPMM5kAmQCZmcwzM0hosIiIaEhwsICAgJkzmZmZMzOZmZCIcABmzADMZswAZmbMAGYAzMxmAFBwuJCQcGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmVB4wFh4wJiYeJCQkGbMZmZmzMxmZqCYeFiAyMwAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AAKCgeDOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmKiggDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzKCgoGYz/2b/MzP/ZjNm//8zZswAzADMzMzMAKioqGb/ZmZm/8wzzMzMMzPMzJmZzJkA/wCZ/wD/mf8AmZnMmcyZmZn/ALi4mJn/MzP/mTOZ/5kz//8zmbCwsMzMZmbMzMxmzGaZ/5n/Zplm/2b/mbi4uMjAoMyZzADM/8wA//8AzJnMzMzMmcz/AAD/zDPM/8wz/8z/MzP/zP8zzMDAwNDIqJmZ/5n/mWb/zMz/Zsxm/2bM/9jQqMjIyMzMzODYsNDQ0P8A/5n/zAD//5nM/8yZ/8z/mTP///8z/+jgsNjY2Gb///DouMzM/8z/zODg4Jn////wwOjo6P//wP//yMz///Dw8P//2P//6P///yH5BAAAAAAALAAAAAAgACAAAAj/AP8NG7asoMGDA4e9WmjKVKVKefLI+fIlSRIiDIb928ixo8eP/PDVg2fO3DhtyyJo/MiSJb+QI02eVNmypseQIknOXGaz50aY8HRG4Olzo79y4rZV4fgyp8mhRf/J8+IFBoYuApiKjKmBaM97atRYxTAm60+g5rr6zGdHDY0MGdYIMPszJzy1NtnaueEhA565N7feXdlS3529Hzz0ARw4pwbCH/X5QfwBEeObQB/XPHzjwwdLlzE7htyRbWfPlhD1wYNnjeiRGl61NO05MVy4cjs2hS2b5b3Ttm9jyM00s6mac5PLU+Mlw3C6/3DCPu5zalUMZKFLv0vd5juqY+XS3N0Nu1LP79efa8cnWEMlfjXLceEytqz27Xfz4IP/URwVKilgZ59u0o2UXz378bdRPwcAiB1W97FXj4FpyQEPggluxMwBEKQAQRWhNSUhhRp8ERSGL/HTC4cQQKDEeCIKRlJaX5hzIoq9DKDjAS+miNNWFJqkQRLjlHQjPkUkWUQvAQTw44hBPpWENuMUeWM9TWbJHpQGzihTBEQsQ2WRNl454ZlnBhVUSTJpAyZB2oxppJp01ulllSe5acNAYo5J5px1slkSnnG6ycChESSqqAaMNurooxooqmgSAQEAOw=="> lightnings and their correspionding stone cost you a life
+when touching them.</p>
+<p>X X X Aliens are almost there where your way leads you to. Both of you will die
+when colliding.</p>
+<p><img alt="riss" src="data:image/gif;base64,R0lGODlhIAAgAPcAAP///4AgQAAAAAAAAAAAAEBgwP8gAIBAIOD/AP///wAAAP/w2lm1+G6qAP/HQwAAAAAAAHAgQG9vnwAAAAAAADBQsOAgAHtSMcDgAODg4NDQ0O/fv1Sq2WSgAPe/PwAAAKqVAGAgQFBQegAAAAAAACBAoMAgAKmARaDAAMDAwLCwsODKpU9wulqWAO+3OwAAAGUAAFAgQI+fugAAAAAAABAwkLAgAJB5YoCgAKCgoJCQkNC6j0plnlCMAOOrNwAAAABAH0AgQAAAAAAAAO/KhQAggKAgAEBAIGCAAICAgAAAAMClekVaf0aCANujMwAAAAAAAAAAAAAAAAAAALWAUAAQcIAAAGAgAEBgAGBgYAAAALWQZUBPYDx4ANObLwAAAAD/AAAAAAAAAAAAAHBPLwAAYGAAAAAAACBAAEBAQAAAAKWAVTA6SjJuAMuUKwAAAAAAAAAAAAAAAAAAAEowHwAAUEAAAAAAAAAAACAgIAAAAJpwRR8lMChkAMePKwAAAAAAAEAAAgAAAAAAAAAAACAwYH8QAAAAAKDAAn9/fwICAn94bQAAAjdVAIBsIiAAAgAAAEoVAAAAAAAAAAAAABgoWHAQAAAAAICgAnBwcAAAAHdvXwAAADJQAHxoIAAAAAAAAAAAAAAAAAAAAAAAABAgUGAQAAAAAGCAAmBgXgAAAHBlUic4XS1LAHhkHgAAAO/VwAAAAAAAAAAAACoaIAgYSFgQAAAAAEBgAlBQUAAAAGhdRyUyTyhGAHJeHAAAAKqQgAAAAAAAAAAAAHdlQgAQQFAQAAAAAAAAAEBAPgAAAGBSPSMtQCNBAG5aGgAAAGVVSgAAAAAAAAAAAFpAKAAIOEACAgAAAAAAADAwMAAAAFpIMiAoMB48AGpWGAAAAAAAAAAAAAAAAAAAADgnFwAAMDAAAAAAAAAAACAgHgAAAFJAKhgdJRk3AGZSFgAAAAAAAAAAAAAAAAAAACUYDwAAKCAAAgAAAAAAABAQEAAAAE04Ig8SGBQyAGRQFgAAACH5BAAAAAAALAAAAAAgACAAAAiAAAEIHEiwoMGDCBMqXMiwocOHCiFAgGhQYsWJFAlaLChRYpo0EDti1NjxY8iOCD1+BLlQZEQIK1m+3JhSJEqOJVfOtHlRpcmHLgGozEhy41CiF5G+VJqQJlOcT3E6jRo0qsCpVrEyPWpVKEyZWb92vSp2rNanZ5GmVbp2rFulAQEAOw=="> cracks in the floor can grow worse when remaining too long on
+them. At least they end up in an abyss!</p>
+<h3 id="3-this-could-be-nasty">3. This could be nasty ...</h3>
+<p><img alt="pfeil" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAAAMwAzADMAAAAzMzMAMzMzADMzMzg4OBgoWAAAZgBmAGYAAEBAQAAzZgBmMzNmADMAZmYAM2YzAEhISDNmMzMzZmYzMwBmZmYAZmZmABAwkAAAmQCZAGYzZjNmZmZmM5kAAAAzmTMAmTOZAACZM5kAM5kzADOZMzMzmZkzM2ZmZmhoaABmmQCZZpkAZmYAmWaZAJlmADOZZmaZMzNmmZkzZmYzmZlmM3BwcAAAzADMAMwAAHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzADMzzJmZADPMM5kAmQCZmcwzM4CAgJkzmZmZMzOZmUBgwABmzADMZswAZmbMAGYAzMxmAGbMM2YzzDPMZswzZjNmzMxmM4iIiJmZZmaZmZlmmZCQkGbMZmZmzMxmZswAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM/8zAJiYmDP/MzMz/5mZmf8zMwD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZpnMZplmzP9mAKCgoGb/MzP/ZjNm//8zZmYz//9mM8zMAMwAzADMzKioqMwzzMzMMzPMzGb/ZmZm//9mZgD/mf8AmZnMmcyZmZn/AJmZzJkA/wCZ//+ZAP8zmZn/MzP/mTOZ/5kz//+ZM7CwsMxmzMzMZmbMzJn/Zplm//9mmWb/mWaZ//+ZZri4uAD/zMyZzADM/8wA//8AzJnMzMzMmcz/AP/MADP/zP8zzDPM/8wz/8z/M//MM8DAwP+ZmZn/mZmZ/8z/Zsxm/2bM//9mzGb/zP/MZsjIyMzMzNDQ0P8A/5n/zAD///+ZzJnM/8yZ/8z/mf/Mmf//AP8z/zP/////M9jY2P9m/2b/////Zsz/zMzM///MzODg4Jn///+Z////mejo6Mz////M////zPDw8P///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAj/AN+xYmWroMGDA1lZWsiI0Z49YsR4adKkR48cCFi928ixo8eP7tSZ+yZNGjRjthpo/MiSpbuQI02eVNmypseQIknOtGWz50aY33Q24OnT5sucJocW7QkzJgWiS1sedQo1qsuc355ardk068qtINXlpPC1aIIELoGStZpgA9qbasv6bOsW7lhLbDfofftTLd6PZwMLpruX49SsjFgS1su4ceF3OEdSSAzYseXGUSCLlUzZ4+LLjDNPlbxHcZTTqFFj/rmZtLuohDNDjhyUghh1r83qlX1U5MisYszhzm2zLe/Iv6VR8PJN+PDix8X6Dqq8SVDnL4mnxTmdZHVp17FnaR8/Xrq589RNUugBrWR46cOzw/edvCS0Bj2MQWsf/vx88+f95p1MDeRgi37tgddfgAwKOOB+xhRIkDEIuhfUhRhiWJJMJ0XIwkAHIpighRluaB+EFDaAwIoNtOgiBTDGKOOMFLjoYg8BAQA7"> Arrows only allow movement in one direction.</p>
+<p><img alt="einbahn" src="data:image/gif;base64,R0lGODlhIAAgAPcAAAAAAAAAMwAzADMAAAAzMzMAMzMzADAwMDMzM1gYADg4OGAgAAAAZgBmAGYAAAAYaEBAQAAzZgBmMzNmADMAZmYAM2YzAAAYcAAYeEhISDNmMzMzZmYzM4AAAAgogIgAAFBQUAgoiJAAAABmZmYAZmZmABAwkAAAmQCZAGYzZjNmZmZmM5kAACBAiBAwmCBAkAAzmTMAmTOZAACZM5kAM5kzAChAkBAwoDOZMzMzmZkzMyhAmKggAChImGZmZhA4qLAgAChIoABmmQCZZpkAZmYAmWaZAJlmABA4sLggADOZZmaZMzNmmZkzZmYzmZlmMxA4uHBwcMAgAMggABBAwAAAzADMAMwAADhYsHh4eDPMADMAzGaZZgAzzADMM5lmZmZmmcwAM8wzANAgABBAyDhYuDMzzJmZADPMM5kAmQCZmcwzM9ggANgoAICAgJkzmZmZMzOZmUBgwOAgAABmzADMZswAZmbMAGYAzMxmAEBgyGbMM2YzzDPMZswzZjNmzMxmM+ggAIiIiJmZZmaZmZlmmUBo0PAoAJCQkGbMZmZmzMxmZkho2MwAmZkAzACZzJnMAAAA/wDMmQD/AMyZAP8AAP8gAP8oADOZzJkzzDMA/8wzmZnMMwD/MwAz/zPMmcyZMzP/AP8AM0hw4JiYmJmZmTP/MzMz/0hw6JnMZplmzAD/ZgBm/8xmmWbMmWb/AMyZZmaZzGYA//8AZqCgoDP/ZjNm/2Yz/2b/M1B48MwAzADMzMzMAKioqFB4/8wzzMzMMzPMzGb/ZmZm/1CA/5nMmcyZmZn/AJmZzJkA/wCZ/wD/mf8AmViA/zP/mTOZ/5kz/5n/M7CwsMxmzMzMZmbMzGaZ/5n/Zplm/2b/mbi4uJnMzMzMmcz/AAD/zMyZzADM/8wA/zP/zDPM/8wz/8z/M8DAwJmZ/5n/mcxm/2bM/2b/zMz/ZsjIyMzMzNDQ0Mz/mZn/zAD//5nM/8yZ/zP//9jY2Gb//8zM/8z/zODg4Jn//+jo6Mz///Dw8P///yH5BAAAAAAALAAAAAAgACAAAAj/AP8JHEiw4EB//PTZe9fOnDZpvWiRIhXFoMWDCRUydAiRlsQsCi4W9IdQ4cKGHCNOdAMh5EGSMPlltLdwo7aHESUiEgSh50EyQIFSGQqlKBIkP37ccOHChIkQHjzsyNATws9mWLES2+orVy5UqEYxMmRIj5wyWC5MpWpVoD8yzUQiTEjTpja1GdhelVuyLkptGHrkpbq34LtLiC9ZsqTtZEPAQQa3/eePSlyCiRMvXszwMYYgIPJO5keFGObEhw4FCpQkiYgP7TyDHjyQtGmBmS+lDjTG9WvYDj+HzjtQH5Tbh1G3aSNFiojnHxa4CT6bOGXjvnArZy6FxfPXCxZQ/x+ewa09KLm0ixwYfjztf/zsIclFUvf6f4LaQyZ//R0SVPz4kxpBDt20kyD5ibcfbfG98wOA/Kw20E0GIiiIG+HdJNxg/ijUzg+j6KPPHCSWOMUUQADxwYodZCjNBYINltA75tzACE3akMgGGyemuOIHLS6QxUN4DeahNi4YQpM9O7LRnI8shpfAQy+uRdVCDiX5zpbvjDFGczzwAGSQU1JZJFUbSWOCHrG1OUV4cMJZpjQQnQnBY72YIIc55rTZTi9xhjcklb308oANokHAES0hlKENn5BGWiCVEBV6aKI40eIBFhR26imddBYa0QMvsAVBR6R4cMEFGLTq6qsYrFMq6wO0PtBCVRCohMgOvPYQxK/ABtsDr7zaYMMLLTyAq0ekCDJYXiBEK620zz7bkwJVrdRTtdx2m+i1LZGSBa4QeOstudcqEIUC2KJrrqnosntAQAA7"> Here, you are not allowed to walk through. But be
+careful, your enemies are!</p>
+<p>sliding doors are almost nasty. They can squeeze you, when you miss the right
+moment to pass them!</p>
+<hr>
+<h2 id="iii-system-requirements">III. System requirements</h2>
 <ul>
-<li>Windows 9x,XP,Vista or POSIX bases operation system, with sound card and graphics with 640x480 pixels in true color.</li>
-<li>SDL >= 1.2.0, SDL_image, SDL_ttf >= 2.0.6 , SDL_mixer >= 1.2.5</li>
+<li>Windows or POSIX based operation system, with sound card and graphics with
+  640x480 pixels in true color.</li>
+<li><code>SDL2</code>, <code>SDL2_image</code>, <code>SDL2_ttf</code> and <code>SDL2_mixer</code> in a not ancient version.</li>
 </ul>
-
-<HR noshade size="5" color=#FF0000>
-</TD></TR>
-   </TABLE>
-  </TD>
- </TR>
-</TABLE>
-
-<TABLE BORDER=0 WIDTH=675><!-- fuss -->
- <TR><TD WIDTH=1 HEIGHT=10></TD></TR>
- <TR><TD><HR noshade size="2"></TD></TR>
-</TABLE>
-<TABLE WIDTH=675>
- <TR>
-  <TD ALIGN=RIGHT><font size="-2">&#169; 2007 by Michael and Roland Lagarden
-   <br>Version 0.1.8-3 - Aug 6, 2007</font>
-  </TD>
- </TR>
-</TABLE>
-</FONT></BODY></HTML>
+<hr>
+<p>© 2007 by Michael and Roland Lagarden<br>
+Version 0.1.8-3 - Aug 6, 2007</p>
+  </body>
+</html>

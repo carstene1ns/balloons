@@ -1,5 +1,7 @@
 # BALLOONS - prick'n'puzzle
 
+*Note: This README is still written...*
+
 BALLOONS is a tile based platform game written in C++ using SDL.
 Players have to collect items which are almost hidden in balloons.
 Prick these balloons and find your way to exit to the following level.
@@ -8,8 +10,8 @@ Levels can be quite tricky, dangerous and time limited, too!
 ## Authors
 
 Copyright (C) 2007 by -S-v-N-  R.& M. Lagarden
-* svnmike@sourceforge.net
-* eriban62@sourceforge.net
+
+See the [Authors file](AUTHORS.md) for more details.
 
 ## License
 
@@ -26,8 +28,6 @@ See the [GNU General Public License](COPYING) for more details.
 
 ## Building
 
-*This section is still a TODO*
-
 ```bash
 cmake -B builddir .
 cmake --build builddir
@@ -36,5 +36,13 @@ cmake --install builddir
 
 ## Playing
 
-See the [online manual](doc/DOCUMENTATION.md) for instructions on how
-to play BALLOONS.
+See the [online manual](http://carstene1ns.github.io/balloons/) for
+instructions on how to play BALLOONS.
+
+## News
+
+See the [News file](NEWS.md) for more details.
+
+## TODO
+
+See the [TODO file](TODO.md) for more details.

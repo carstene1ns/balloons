@@ -100,6 +100,7 @@ public:
 
 private:
 	bool fullscreen;
+	Uint64 start_time;
 };
 
 

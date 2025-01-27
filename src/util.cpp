@@ -134,6 +134,8 @@ DisplayWindow::DisplayWindow(const char *title, int width, int height, bool full
 	m_texture = SDL_CreateTexture(m_renderer, SDL_PIXELFORMAT_BGRA32,
 		SDL_TEXTUREACCESS_STREAMING, width, height);
 
+	start_time = SDL_GetPerformanceCounter();
+
 	SDL_SetWindowTitle(m_window, title);
 
 	icon = IMG_Load(image_files[ICON]);
@@ -197,6 +199,16 @@ void DisplayWindow::flip()
 	SDL_UpdateTexture(m_texture, NULL, m_screen->pixels, m_screen->pitch);
 	SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
 	SDL_RenderPresent(m_renderer);
+
+	Uint64 end_time = SDL_GetPerformanceCounter();
+	float elapsed_ms = (end_time - start_time) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
+
+	// Cap to 60 FPS
+	int cap = floor(16.666f - elapsed_ms);
+	if(cap > 0)
+		SDL_Delay(cap);
+
+	start_time = SDL_GetPerformanceCounter();
 }
 
 SoundBuffer::SoundBuffer(const char* src)

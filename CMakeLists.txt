@@ -24,6 +24,7 @@ add_executable(balloons
 	src/main.h
 	src/map.cpp
 	src/map.h
+	src/mapdef.h
 	src/object.h
 	src/object_animate.cpp
 	src/object_animate.h

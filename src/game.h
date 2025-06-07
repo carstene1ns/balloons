@@ -113,7 +113,9 @@ private:
 	Font* pFont32; // Zeichensatz 32
 	Font* pFont16; // Zeichensatz 20
 
+#ifndef NO_SOUND
 	SoundBuffer *m_lpWave[21]; // Sound-Zeiger...
+#endif
 
 	Timer *game_timer, *menu_timer;
 	Timer *begin_time;

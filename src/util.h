@@ -145,7 +145,9 @@ public:
 	void set_volume(float);
 
 private:
+#ifndef NO_SOUND
 	Mix_Chunk *sample;
+#endif
 };
 
 #endif // B_UTIL_H

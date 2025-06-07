@@ -79,8 +79,10 @@ Game::Game(DisplayWindow &window)
 
 Game::~Game()
 {
+#ifndef NO_SOUND
 	for (int i = 0; i < NUM_SOUNDS; i++)
 		delete m_lpWave[i];
+#endif
 
 	delete pFrame;
 	delete pFont32;

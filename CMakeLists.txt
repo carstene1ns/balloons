@@ -46,6 +46,11 @@ if(NOT WANT_SDL)
 	message(FATAL_ERROR "Platform not available, try -DWANT_SDL=ON")
 endif()
 
+option(WANT_SOUND "Build with audio output" ON)
+if(NOT WANT_SOUND)
+	target_compile_definitions(balloons PRIVATE NO_SOUND)
+endif()
+
 # game data
 
 set(CMAKE_INSTALL_DATADIR "share/balloons")
@@ -60,12 +65,15 @@ endif()
 
 if(WANT_SDL)
 	find_package(SDL2 REQUIRED)
-	find_package(SDL2_mixer REQUIRED)
+	if(WANT_SOUND)
+		find_package(SDL2_mixer REQUIRED)
+		target_link_libraries(balloons PRIVATE
+			SDL2_mixer::SDL2_mixer)
+	endif()
 	find_package(SDL2_image REQUIRED)
 	find_package(SDL2_ttf REQUIRED)
 
 	target_link_libraries(balloons PRIVATE
-		SDL2_mixer::SDL2_mixer
 		SDL2_image::SDL2_image
 		SDL2_ttf::SDL2_ttf
 		SDL2::SDL2)
